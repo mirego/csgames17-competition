@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.4.0)
+  - MCUIColorUtils (1.0.0)
+  - MCUIViewLayout (0.5.1)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - MCUIColorUtils
+  - MCUIViewLayout
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  MCUIColorUtils: 6f11e1702db4ff5419d28cba1e8f7a82dd82d5fe
+  MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 6d10d47d99c398eca0d4009ea46bd1f2f7904341
+
+COCOAPODS: 1.2.0
