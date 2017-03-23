@@ -31,17 +31,20 @@ dependencies {
     compile "com.android.support:appcompat-v7:${supportVersion}"
     compile "com.android.support:design:${supportVersion}"
 
-    //Butterknife
+    // Butterknife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
-    //Picasso
+    // Picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
 
-    //Retrofit
+    // Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
 
     // Dagger
     compile 'com.google.dagger:dagger:2.10'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+
+    // Calligraphy
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
 }
