@@ -1,4 +1,4 @@
-package com.mirego.sampleapp.data;
+package com.mirego.cschat.data;
 
 import java.util.Date;
 

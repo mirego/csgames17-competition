@@ -1,13 +1,13 @@
-package com.mirego.sampleapp.activities;
+package com.mirego.cschat.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.widget.TextView;
 
-import com.mirego.sampleapp.R;
-import com.mirego.sampleapp.data.DataSource;
-import com.mirego.sampleapp.data.DataSourceImpl;
+import com.mirego.cschat.R;
+import com.mirego.cschat.data.DataSource;
+import com.mirego.cschat.data.DataSourceImpl;
 
 import java.util.Date;
 import java.util.Timer;
