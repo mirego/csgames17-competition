@@ -6,6 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/dustyOrange</item>
+        <item name="colorControlNormal">@color/purpleyGrey</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="LoginField">
+        <item name="android:textColorHint">@color/purpleyGrey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
     </style>
 
 </resources>
