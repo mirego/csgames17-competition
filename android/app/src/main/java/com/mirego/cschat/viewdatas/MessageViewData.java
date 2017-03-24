@@ -27,4 +27,8 @@ public class MessageViewData {
     public String avatarUrl() {
         return user.getAvatarUrl();
     }
+
+    public String username() {
+        return user.getUsername();
+    }
 }

@@ -47,6 +47,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             MessageViewData messageViewData = conversationViewData.lastMessage();
 
             if (messageViewData != null) {
+                holder.tvTitle.setText(messageViewData.username());
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
                 Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
@@ -71,6 +72,9 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
         @BindView(R.id.iv_avatar)
         ImageView ivAvatar;
+
+        @BindView(R.id.tv_conversation_title)
+        TextView tvTitle;
 
         @BindView(R.id.tv_conversation_last_message)
         TextView tvLastMessage;

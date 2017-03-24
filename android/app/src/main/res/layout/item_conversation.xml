@@ -31,14 +31,14 @@
 
     <TextView
         android:id="@+id/tv_conversation_title"
-        fontPath="@string/font_lato_regular"
+        fontPath="@string/font_lato_bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="17dp"
         app:layout_constraintLeft_toRightOf="@id/iv_avatar"
         app:layout_constraintRight_toLeftOf="@id/tv_conversation_timestamp"
         app:layout_constraintTop_toTopOf="parent"
