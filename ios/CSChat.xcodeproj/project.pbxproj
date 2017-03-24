@@ -34,6 +34,7 @@
 		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
 		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
 		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
+		F17FBC6F1E84D3AB00A0A56E /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6E1E84D3AB00A0A56E /* HttpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
+		F17FBC6E1E84D3AB00A0A56E /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				F17FBC6A1E84CC1300A0A56E /* Impl */,
+				F17FBC701E84D3E500A0A56E /* Model */,
+				F17FBC6D1E84D39A00A0A56E /* Service */,
 				F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */,
 				F17FBC681E84CBFD00A0A56E /* LoginController.swift */,
 			);
@@ -279,6 +283,29 @@
 			isa = PBXGroup;
 			children = (
 				F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		F17FBC6D1E84D39A00A0A56E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F17FBC711E84D3F400A0A56E /* Impl */,
+				F17FBC6E1E84D3AB00A0A56E /* HttpService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F17FBC701E84D3E500A0A56E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F17FBC711E84D3F400A0A56E /* Impl */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -431,6 +458,7 @@
 				E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */,
 				E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */,
 				E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */,
+				F17FBC6F1E84D3AB00A0A56E /* HttpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

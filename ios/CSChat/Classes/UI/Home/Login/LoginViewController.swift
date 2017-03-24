@@ -34,15 +34,22 @@ class LoginViewController: BaseViewController
         mainView.delegate = self
     }
 
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        mainView.focusUsername()
+    }
+
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
+        //mainView.focusUsername()
     }
 
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        mainView.focusUsername()
+        //mainView.focusUsername()
     }
 }
 

@@ -28,6 +28,7 @@ class LoginView: UIView
     private let backButton = TextButton(title: LocalizedString("LOGIN_BACK_BUTTON"))
 
     fileprivate var keyboardHeight = 0.f
+    fileprivate var skipKeyboardAnimation = true
     fileprivate var keyboardOffsetLocked = false
 
     init()
@@ -131,11 +132,16 @@ extension LoginView
         guard !keyboardOffsetLocked else { return }
 
         BRYParseKeyboardNotification(notification) { [weak self] (duration, keyboardHeight, options) -> Void in
-            self?.keyboardHeight = keyboardHeight
-            UIView.animate(withDuration: duration, delay: 0, options: options, animations: { 
-                self?.setNeedsLayout()
-                self?.layoutIfNeeded()
-            }, completion: nil)
+            guard let strongSelf = self else { return }
+            strongSelf.keyboardHeight = keyboardHeight
+            if strongSelf.skipKeyboardAnimation {
+                strongSelf.skipKeyboardAnimation = false
+                strongSelf.setNeedsLayout()
+            } else {
+                UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+                    self?.layoutSubviews()
+                }, completion: nil)
+            }
         }
     }
 
@@ -146,8 +152,7 @@ extension LoginView
         BRYParseKeyboardNotification(notification) { [weak self] (duration, _, options) -> Void in
             self?.keyboardHeight = 0
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self?.setNeedsLayout()
-                self?.layoutIfNeeded()
+                self?.layoutSubviews()
             }, completion: nil)
         }
     }
