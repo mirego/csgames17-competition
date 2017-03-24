@@ -5,11 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
 import com.mirego.cschat.adapters.ConversationAdapter;
 import com.mirego.cschat.controller.ConversationsController;
+import com.mirego.cschat.controller.LoginController;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 
 import javax.inject.Inject;
@@ -29,6 +32,9 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     @Inject
     ConversationsController conversationsController;
 
+    @Inject
+    LoginController loginController;
+
     private ConversationAdapter conversationAdapter;
 
     @Override
@@ -47,6 +53,22 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
         conversationAdapter = new ConversationAdapter(this);
         rvConversations.setLayoutManager(new LinearLayoutManager(this));
         rvConversations.setAdapter(conversationAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_conversations, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            loginController.logout();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @OnClick(R.id.fab_add_conversation)

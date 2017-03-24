@@ -20,7 +20,11 @@ public class StorageService {
     }
 
     public void storeUserId(String userId) {
-        sharedPreferences.edit().putString(Prefs.KEY_USER_ID, userId);
+        sharedPreferences.edit().putString(Prefs.KEY_USER_ID, userId).apply();
+    }
+
+    public void clearUserId() {
+        sharedPreferences.edit().remove(Prefs.KEY_USER_ID).apply();
     }
 
 
