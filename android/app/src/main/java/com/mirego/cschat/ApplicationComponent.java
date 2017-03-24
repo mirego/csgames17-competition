@@ -1,5 +1,6 @@
 package com.mirego.cschat;
 
+import com.mirego.cschat.activities.HomeActivity;
 import com.mirego.cschat.activities.LoginActivity;
 
 import javax.inject.Singleton;
@@ -10,4 +11,6 @@ import dagger.Component;
 @Component(modules = AndroidModule.class)
 public interface ApplicationComponent {
     void inject(LoginActivity loginActivity);
+
+    void inject(HomeActivity homeActivity);
 }
