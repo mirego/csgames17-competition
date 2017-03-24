@@ -3,6 +3,7 @@ package com.mirego.cschat;
 import com.mirego.cschat.controller.ConversationsController;
 import com.mirego.cschat.controller.LoginController;
 import com.mirego.cschat.services.CSChatService;
+import com.mirego.cschat.services.StorageService;
 
 import javax.inject.Singleton;
 
@@ -38,8 +39,14 @@ class AndroidModule {
     }
 
     @Provides
-    LoginController provideLoginController(CSChatService chatService) {
-        return new LoginController(chatService);
+    @Singleton
+    StorageService provideStorageService() {
+        return new StorageService(application);
+    }
+
+    @Provides
+    LoginController provideLoginController(CSChatService chatService, StorageService storageService) {
+        return new LoginController(chatService, storageService);
     }
 
     @Provides
