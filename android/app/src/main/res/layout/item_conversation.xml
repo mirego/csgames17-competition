@@ -51,7 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintLeft_toRightOf="@id/iv_avatar"
