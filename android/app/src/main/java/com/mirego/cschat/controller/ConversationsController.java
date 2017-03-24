@@ -31,7 +31,7 @@ public class ConversationsController {
                     public List<ConversationViewData> apply(@NonNull ConversationsResponse conversationsResponses) throws Exception {
                         List<ConversationViewData> conversationViewDatum = new ArrayList<>();
                         for (Conversation conversation : conversationsResponses.getConversations()) {
-                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponses.getUsers()));
+                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponses.getUsers(), storageService.currentUserId()));
                         }
                         return conversationViewDatum;
                     }

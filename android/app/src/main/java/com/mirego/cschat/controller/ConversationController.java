@@ -31,7 +31,7 @@ public class ConversationController {
                 .map(new Function<ConversationsResponse, ConversationViewData>() {
                     @Override
                     public ConversationViewData apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
-                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers());
+                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId());
                     }
                 });
     }
@@ -44,7 +44,7 @@ public class ConversationController {
                     public List<ConversationViewData> apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
                         List<ConversationViewData> conversationViewDatum = new ArrayList<>();
                         for (Conversation conversation : conversationsResponse.getConversations()) {
-                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponse.getUsers()));
+                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponse.getUsers(), storageService.currentUserId()));
                         }
                         return conversationViewDatum;
                     }
@@ -56,7 +56,7 @@ public class ConversationController {
                 .map(new Function<ConversationsResponse, ConversationViewData>() {
                     @Override
                     public ConversationViewData apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
-                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers());
+                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId());
                     }
                 });
     }

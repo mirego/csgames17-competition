@@ -11,14 +11,16 @@ public class ConversationViewData {
 
     private final Conversation conversation;
     private final List<User> users;
+    private final String currentUserId;
 
-    public ConversationViewData(Conversation conversation, List<User> users) {
+    public ConversationViewData(Conversation conversation, List<User> users, String currentUserId) {
         this.conversation = conversation;
         this.users = users;
+        this.currentUserId = currentUserId;
     }
 
     public MessageViewData lastMessage() {
-        return new MessageViewData(conversation.getLastMessage(), userForUserId(conversation.getLastMessage().getUserId()));
+        return new MessageViewData(conversation.getLastMessage(), otherUserFromIds(conversation.getUsers()));
     }
 
     public List<MessageViewData> messages() {
@@ -28,6 +30,18 @@ public class ConversationViewData {
         }
         return messageViewDatas;
     }
+
+    private User otherUserFromIds(List<String> userIds) {
+        if (userIds != null) {
+            for (String userId : userIds) {
+                if (!currentUserId.equals(userId)) {
+                    return userForUserId(userId);
+                }
+            }
+        }
+        return null;
+    }
+
 
     private User userForUserId(String userId) {
         if (users != null) {
