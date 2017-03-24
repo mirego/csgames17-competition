@@ -18,7 +18,9 @@ class BaseViewController: UIViewController
     {
         super.init(nibName: nil, bundle: nil)
 
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont.latoRegular(17), NSForegroundColorAttributeName: UIColor.white], for: .normal)
+        navigationItem.backBarButtonItem = backButton
     }
     
     required init?(coder aDecoder: NSCoder)
