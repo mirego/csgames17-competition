@@ -10,5 +10,8 @@ public class ConversationViewData {
         this.conversation = conversation;
     }
 
+    public MessageViewData lastMessage() {
+        return new MessageViewData(conversation.getLastMessage());
+    }
 
 }
