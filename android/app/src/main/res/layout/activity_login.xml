@@ -50,7 +50,6 @@
         android:layout_height="wrap_content"
         app:layout_marginTopPercent="6%"
         android:hint="@string/login_submit"
-        android:textColor="@android:color/white"
         android:layout_below="@id/et_password"
         android:textSize="20dp"/>
 
