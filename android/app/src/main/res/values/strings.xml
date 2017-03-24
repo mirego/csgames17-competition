@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Sample App</string>
+    <string name="app_name">CSChat</string>
+    <string name="welcome_title">Welcome to CSChat</string>
+    <string name="welcome_subtitle">Please login or register below.</string>
 </resources>
