@@ -1,33 +1,37 @@
 const express = require('express');
-const router = express.Router();
+
+const router = express.Router({
+  mergeParams: true
+});
 
 /*
- * GET all users
+ * List all users
  */
 router.get('/', function(req, res) {
-  const userCollection = req.db.users;
-  const filter = req.query.name ? {
-    "name": req.query.name
-  } : {};
-  userCollection.find(filter, {}, function(e, docs) {
-    res.json(docs);
+  let filter = {};
+  let projection = {
+    password: 0
+  };
+  req.db.users.find(filter, projection, function(e, users) {
+    res.json(users);
   });
 });
 
 /*
- * GET a user
+ * Get a specific user
  */
 router.get('/:id', function(req, res) {
-  const userCollection = req.db.users;
-  const userId = req.params.id;
-  userCollection.findOne({
-    "_id": userId
-  }, {}, function(err, doc) {
-    if (doc == null) {
-      res.status(404) // HTTP status 404: NotFound
-      res.send('Not found');
+  let filter = {
+    '_id': req.params.id
+  };
+  let projection = {
+    'password': 0
+  };
+  req.db.users.findOne(filter, projection, function(e, user) {
+    if (user) {
+      res.json(user);
     } else {
-      res.json(doc);
+      res.status(404).send('User not found');
     }
   });
 });
@@ -36,31 +40,19 @@ router.get('/:id', function(req, res) {
  * Create new user
  */
 router.post('/', function(req, res) {
-  const userCollection = req.db.users;
-  userCollection.insert(req.body, function(err, result) {
-    res.send(
-      (err === null) ? result : {
-        msg: err
-      }
-    );
-  });
-});
-
-/*
- * Delete user
- */
-router.delete('/:id', function(req, res) {
-  const userCollection = req.db.users;
-  const userToDelete = req.params.id;
-  userCollection.remove({
-    '_id': userToDelete
-  }, function(err) {
-    res.send((err === null) ? {
-      msg: ''
-    } : {
-      msg: 'error: ' + err
+  if (req.body.username && req.body.password) {
+    let user = {
+      'username': req.body.username,
+      'password': req.body.password,
+      'url': req.body.url || ''
+    };
+    req.db.users.insert(user, function(e, user) {
+      delete user.password;
+      res.json(user);
     });
-  });
+  } else {
+    res.status(422).send('Missing required fields');
+  }
 });
 
 module.exports = router;

@@ -1,29 +1,52 @@
+/***********
+ * Imports *
+ ***********/
+
+// Web server
 const express = require('express');
+
+// Database
 const nedb = require('nedb');
+
+// Request helpers
 const bodyParser = require('body-parser');
+
+// Tools
 const logger = require('morgan');
 const path = require('path');
 
+/********************
+ * Setup the server *
+ ********************/
 
+// Setup express server
 let app = express();
 app.set('port', process.env.PORT || 3000);
 
+// Configure database collections
 let db = {};
-db.users = new nedb({
-  filename: 'data/users.db',
-  autoload: true
-});
 
 db.conversations = new nedb({
   filename: 'data/conversations.db',
   autoload: true
 });
 
+db.users = new nedb({
+  filename: 'data/users.db',
+  autoload: true
+});
+
+// Forward the database to the router
 app.use(function(req, res, next) {
   req.db = db;
   next();
 });
 
+/************************
+ * Configure the server *
+ ************************/
+
+// Setup helpers
 app.use(bodyParser.json({
   limit: '10mb'
 }));
@@ -32,31 +55,35 @@ app.use(bodyParser.urlencoded({
   limit: '10mb'
 }));
 
+// Setup tools
 app.use(logger('dev'));
 
+// Setup routes
 let login = require('./routes/login');
-let usersRoute = require('./routes/users');
+let users = require('./routes/users');
 let conversations = require('./routes/conversations');
-let messages = require('./routes/messages');
 
+// Bind routes
 app.use('/login', login);
+app.use('/users', users);
+app.use('/users/:user_id/conversations', conversations);
 
-app.use('/users', usersRoute);
-usersRoute.use('/:user_id/conversations', conversations);
-
+/// Catch 404 errors
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(404).send('Route not found');
 });
 
+/// Setup debugging (print stack trace)
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
+  res.status(err.status || 500).json({
     message: err.message,
     error: err
   });
 });
+
+/********************
+ * Start the server *
+ ********************/
 
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on localhost:' + server.address().port);
