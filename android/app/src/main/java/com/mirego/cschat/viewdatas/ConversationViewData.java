@@ -3,7 +3,6 @@ package com.mirego.cschat.viewdatas;
 import com.mirego.cschat.models.Conversation;
 import com.mirego.cschat.models.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ConversationViewData {
@@ -23,18 +22,22 @@ public class ConversationViewData {
     }
 
     private User userForUserId(List<String> userIds) {
-        for (String userId : userIds) {
-            if (!currentUserId.equals(userId)) {
-                return userForUserId(userId);
+        if (userIds != null) {
+            for (String userId : userIds) {
+                if (!currentUserId.equals(userId)) {
+                    return userForUserId(userId);
+                }
             }
         }
         return null;
     }
 
     private User userForUserId(String userId) {
-        for (User user : users) {
-            if (user.getId().equals(userId)) {
-                return user;
+        if (users != null) {
+            for (User user : users) {
+                if (user.getId().equals(userId)) {
+                    return user;
+                }
             }
         }
         return null;
