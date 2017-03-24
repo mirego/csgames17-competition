@@ -1,6 +1,7 @@
 package com.mirego.cschat.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.mirego.cschat.CSChatApplication;
+import com.mirego.cschat.Prefs;
 import com.mirego.cschat.R;
 import com.mirego.cschat.controller.LoginController;
 import com.mirego.cschat.models.User;
@@ -57,6 +59,9 @@ public class LoginActivity extends BaseActivity {
                 .subscribe(new Consumer<User>() {
                     @Override
                     public void accept(@NonNull User user) throws Exception {
+
+                        SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+                        sharedPreferences.edit().putString(Prefs.KEY_USER_ID, user.getId()).apply();
                         startActivity(new Intent(LoginActivity.this, ConversationsActivity.class));
                     }
                 }, new Consumer<Throwable>() {

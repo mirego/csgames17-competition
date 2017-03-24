@@ -1,10 +1,12 @@
 package com.mirego.cschat.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.mirego.cschat.CSChatApplication;
+import com.mirego.cschat.Prefs;
 import com.mirego.cschat.R;
 
 import butterknife.ButterKnife;
@@ -18,6 +20,15 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         ((CSChatApplication) getApplication()).component().inject(this);
         ButterKnife.bind(this);
+        redirectIfLoggedIn();
+    }
+
+    private void redirectIfLoggedIn() {
+        SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        String userId = sharedPreferences.getString(Prefs.KEY_USER_ID, null);
+        if (userId != null) {
+            startActivity(new Intent(this, ConversationsActivity.class));
+        }
     }
 
     @OnClick(R.id.btn_login)
