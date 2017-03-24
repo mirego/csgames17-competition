@@ -2,7 +2,7 @@
 
 ## User Routes
 
-#### POST `/login`
+#### POST `/api/login`
 
 Validate a user's credentials.
 
@@ -28,7 +28,7 @@ Validate a user's credentials.
 
 ---
 
-#### POST `/users`
+#### POST `/api/users`
 
 Register a new user.
 
@@ -54,7 +54,7 @@ Register a new user.
 
 ## Conversation Routes
 
-#### GET `/users/:user_id/conversations`
+#### GET `api/users/:user_id/conversations`
 
 List all open conversations for a specific user.
 
@@ -74,7 +74,7 @@ List all open conversations for a specific user.
 
 ---
 
-#### POST `/users/:user_id/conversations`
+#### POST `/api/users/:user_id/conversations`
 
 Create a new conversation.
 
@@ -104,7 +104,7 @@ Create a new conversation.
 
 ---
 
-#### GET `/users/:user_id/conversations/:conversation_id`
+#### GET `/api/users/:user_id/conversations/:conversation_id`
 
 Read a conversation details.
 
@@ -130,7 +130,7 @@ Read a conversation details.
 
 ---
 
-#### POST `/users/:user_id/conversations/:conversation_id`
+#### POST `/api/users/:user_id/conversations/:conversation_id`
 
 Write a new message to the conversation
 
