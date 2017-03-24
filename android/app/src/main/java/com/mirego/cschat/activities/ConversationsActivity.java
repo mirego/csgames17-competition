@@ -9,7 +9,10 @@ import android.support.v7.widget.Toolbar;
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
 import com.mirego.cschat.adapters.ConversationAdapter;
+import com.mirego.cschat.controller.ConversationsController;
 import com.mirego.cschat.viewdatas.ConversationViewData;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +25,9 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @Inject
+    ConversationsController conversationsController;
 
     private ConversationAdapter conversationAdapter;
 
