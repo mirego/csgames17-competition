@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
@@ -19,6 +20,9 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     @BindView(R.id.rv_conversations)
     RecyclerView rvConversations;
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
     private ConversationAdapter conversationAdapter;
 
     @Override
@@ -27,6 +31,9 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
         setContentView(R.layout.activity_conversations);
         ((CSChatApplication) getApplication()).component().inject(this);
         ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(getString(R.string.conversations_title));
         configureConversationsRecyclerView();
     }
 
