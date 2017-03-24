@@ -21,7 +21,7 @@ public class MessageViewData {
     }
 
     public String timestamp() {
-        return dateFormat.format(message.getTimestamps());
+        return dateFormat.format(message.getTimestamp());
     }
 
     public String avatarUrl() {
