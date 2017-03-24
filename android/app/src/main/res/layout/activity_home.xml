@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/iv_app_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icn_app_logo"
         android:layout_marginTop="140dp"
+        android:src="@drawable/icn_app_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,6 +19,7 @@
 
     <TextView
         android:id="@+id/tv_welcome_title"
+        fontpath="@string/font_lato_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -29,14 +31,20 @@
         app:layout_constraintTop_toBottomOf="@id/iv_app_logo" />
 
     <TextView
+        fontpath="@string/font_lato_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="@string/welcome_subtitle"
-        android:textColor="@color/black"
+        android:textColor="@color/purpleyGrey"
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome_title" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>
