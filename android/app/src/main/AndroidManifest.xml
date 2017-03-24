@@ -16,7 +16,6 @@
             android:name="com.mirego.cschat.activities.LoginActivity"
             android:windowSoftInputMode="adjustResize"/>
 
-
         <activity android:name="com.mirego.cschat.activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
