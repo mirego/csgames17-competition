@@ -13,6 +13,7 @@ public class CSChatApplication extends Application {
         super.onCreate();
 
         component = DaggerApplicationComponent.builder()
+                .androidModule(new AndroidModule(this))
                 .build();
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()

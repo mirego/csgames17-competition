@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout
+    android:id="@+id/login_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,7 +33,7 @@
         android:layout_below="@id/tv_login"
         android:hint="@string/login_username"
         android:inputType="textNoSuggestions"
-        app:layout_marginTopPercent="10%" />
+        app:layout_marginTopPercent="10%"/>
 
     <EditText
         android:id="@+id/et_password"
@@ -44,7 +46,7 @@
         app:layout_marginTopPercent="4%" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/et_password"
