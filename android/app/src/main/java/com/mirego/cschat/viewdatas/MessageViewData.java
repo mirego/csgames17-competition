@@ -1,16 +1,19 @@
 package com.mirego.cschat.viewdatas;
 
 import com.mirego.cschat.models.Message;
+import com.mirego.cschat.models.User;
 
 import java.text.DateFormat;
 
 public class MessageViewData {
 
-    private Message message;
-    private DateFormat dateFormat = DateFormat.getTimeInstance();
+    private final Message message;
+    private final User user;
+    private final DateFormat dateFormat = DateFormat.getTimeInstance();
 
-    public MessageViewData(Message message) {
+    public MessageViewData(Message message, User user) {
         this.message = message;
+        this.user = user;
     }
 
     public String message() {
@@ -19,5 +22,9 @@ public class MessageViewData {
 
     public String timestamp() {
         return dateFormat.format(message.getTimestamps());
+    }
+
+    public String avatarUrl() {
+        return user.getAvatarUrl();
     }
 }

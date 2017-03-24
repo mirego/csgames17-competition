@@ -68,7 +68,12 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     }
 
     private void configureConversationsRecyclerView() {
-        conversationAdapter = new ConversationAdapter(this);
+        conversationAdapter = new ConversationAdapter(this, new ConversationAdapter.ConversationAdapterListener() {
+            @Override
+            public void onConversationClicked(ConversationViewData conversationViewData) {
+                // TODO:
+            }
+        });
         rvConversations.setLayoutManager(new LinearLayoutManager(this));
         rvConversations.setAdapter(conversationAdapter);
     }
