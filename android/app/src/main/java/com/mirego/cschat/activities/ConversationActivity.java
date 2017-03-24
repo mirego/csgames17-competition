@@ -90,6 +90,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
         if (getConversationId() != null) {
             fetchConversation();
         } else {
+            // todo
             createConversation("ZxPI0nf1mAAp4FSM");
         }
     }
@@ -132,7 +133,6 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                     @Override
                     public void accept(@NonNull List<ConversationViewData> conversationViewDatas) throws Exception {
                         // todo
-                        int i = 0;
                     }
                 }, new Consumer<Throwable>() {
                     @Override
