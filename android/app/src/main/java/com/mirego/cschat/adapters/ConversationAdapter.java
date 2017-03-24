@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mirego.cschat.R;
+import com.mirego.cschat.transforms.CircleTransform;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 import com.mirego.cschat.viewdatas.MessageViewData;
 import com.squareup.picasso.Picasso;
@@ -48,7 +49,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             if (messageViewData != null) {
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
-                Picasso.with(context).load(messageViewData.avatarUrl());
+                Picasso.with(context).load(messageViewData.avatarUrl()).transform(new CircleTransform()).into(holder.ivAvatar);
             }
         }
 
