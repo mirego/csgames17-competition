@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     private var loginController: LoginController?
 
+    private var isLoggedIn = false
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         controllerFactory = ControllerFactory(serviceFactory: serviceFactory)
@@ -40,9 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         window!.makeKeyAndVisible()
 
         _ = loginController?.isLoggedObservable.register(callback: { (_, isLoggedIn) in
-            if isLoggedIn {
+            if isLoggedIn && !self.isLoggedIn {
                 self.transitionViewController.transitionToViewController(NavigationController(rootViewController: self.viewControllerFactory.conversationsViewController()))
-            } else {
+            } else if self.isLoggedIn {
                 self.transitionViewController.transitionToViewController(UINavigationController(rootViewController: self.viewControllerFactory.homeViewController()))
             }
         })
