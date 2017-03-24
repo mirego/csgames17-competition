@@ -4,6 +4,7 @@ package com.mirego.cschat.controller;
 import com.mirego.cschat.models.Conversation;
 import com.mirego.cschat.models.ConversationResponse;
 import com.mirego.cschat.services.CSChatService;
+import com.mirego.cschat.services.StorageService;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 
 import java.util.ArrayList;
@@ -16,13 +17,15 @@ import io.reactivex.functions.Function;
 public class ConversationsController {
 
     private final CSChatService chatService;
+    private final StorageService storageService;
 
-    public ConversationsController(CSChatService chatService) {
+    public ConversationsController(CSChatService chatService, StorageService storageService) {
         this.chatService = chatService;
+        this.storageService = storageService;
     }
 
     public Flowable<List<ConversationViewData>> getConversations() {
-        return chatService.fetchConversations("XCfb8hO18ZkHcN2X")
+        return chatService.fetchConversations(storageService.currentUserId())
                 .map(new Function<ConversationResponse, List<ConversationViewData>>() {
                     @Override
                     public List<ConversationViewData> apply(@NonNull ConversationResponse conversationResponses) throws Exception {

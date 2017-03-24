@@ -50,8 +50,8 @@ class AndroidModule {
     }
 
     @Provides
-    ConversationsController provideConversationsController(CSChatService chatService) {
-        return new ConversationsController(chatService);
+    ConversationsController provideConversationsController(CSChatService chatService, StorageService storageService) {
+        return new ConversationsController(chatService, storageService);
     }
 
 }
