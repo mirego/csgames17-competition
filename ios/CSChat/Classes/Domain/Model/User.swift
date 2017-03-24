@@ -15,10 +15,6 @@ class User: Mappable
     var username: String? = nil
     var url: String? = nil
 
-    init()
-    {
-    }
-
     required init?(map: Map)
     {
     }
