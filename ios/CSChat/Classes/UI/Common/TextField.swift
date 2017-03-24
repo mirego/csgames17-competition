@@ -18,6 +18,7 @@ class TextField: UIView
     {
         super.init(frame: .zero)
 
+        textField.tintColor = .dustyOrange
         textField.textColor = .black
         textField.font = .latoRegular(20)
         textField.placeholder = hint

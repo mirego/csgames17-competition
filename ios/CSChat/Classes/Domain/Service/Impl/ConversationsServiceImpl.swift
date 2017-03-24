@@ -28,4 +28,20 @@ class ConversationsServiceImpl: ConversationsService
             }
         }
     }
+
+    func allMessages(forConversationSummary conversationSummary: ConversationSummary, loggedUser: User, completion: @escaping (_ messageResponse: MessageResponse?) -> (Void))
+    {
+        let url = HttpConst.baseUrl + "users/\(loggedUser.id ?? "")/conversations/\(conversationSummary.id ?? "")"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default).responseObject { (response: DataResponse<MessageResponse>) in
+            if let statusCode = response.response?.statusCode {
+                if (statusCode >= 200 && statusCode < 300) {
+                    completion(response.result.value)
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }

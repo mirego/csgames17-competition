@@ -16,6 +16,8 @@ class NavigationController: UINavigationController
 
         navigationBar.isTranslucent = false
         navigationBar.barTintColor = .dustyOrange
+        navigationBar.backIndicatorImage = UIImage(named: "icnBack")?.withRenderingMode(.alwaysTemplate)
+        navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "icnBack")?.withRenderingMode(.alwaysTemplate)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

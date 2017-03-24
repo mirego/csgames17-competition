@@ -26,7 +26,7 @@ class ConversationsViewController: BaseViewController
 
         title = LocalizedString("CONVERSATIONS_TITLE")
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "btnLogout")!.withRenderingMode(.alwaysOriginal), style: .plain) { [weak self] _ in
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "btnLogout"), style: .plain) { [weak self] _ in
             self?.loginController.logout()
         }
     }
@@ -54,6 +54,10 @@ class ConversationsViewController: BaseViewController
                     print("\($0.date ?? "")")
                     print("\($0.avatarUrl ?? "")")
                 }
+
+                delay(2, closure: { 
+                    self.navigationController?.pushViewController(self.viewControllerFactory.messagesViewController(conversationViewModel: conversations[0]), animated: true)
+                })
             } else {
                 print("Error!!")
             }

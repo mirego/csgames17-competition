@@ -26,7 +26,7 @@ class ConversationViewModelImpl: ConversationViewModel
         return user?.url
     }
 
-    private let conversationSummary: ConversationSummary
+    let conversationSummary: ConversationSummary
     private let user: User?
 
     init(conversationSummary: ConversationSummary, users: [User], loggedUser: User)

@@ -1,5 +1,5 @@
 //
-//  HttpConst.swift
+//  MessageViewModel.swift
 //  CSChat
 //
 //  Created by Hugo Lefrancois on 2017-03-24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HttpConst
+protocol MessageViewModel
 {
-    static let baseUrl = "http://localhost:3000/api/"
+
 }

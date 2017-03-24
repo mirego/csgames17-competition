@@ -11,4 +11,6 @@ import UIKit
 protocol ConversationsService
 {
     func allConversations(loggedUser: User, completion: @escaping (_ conversationResponse: ConversationResponse?) -> (Void))
+
+    func allMessages(forConversationSummary conversationSummary: ConversationSummary, loggedUser: User, completion: @escaping (_ messageResponse: MessageResponse?) -> (Void))
 }

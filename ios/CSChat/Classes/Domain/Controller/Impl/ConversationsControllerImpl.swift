@@ -41,4 +41,16 @@ class ConversationsControllerImpl: ConversationsController
             completion(conversationsViewModel)
         }
     }
+
+    func allMessages(forConversation conversation: ConversationViewModel, completion: @escaping (_ messages: [MessageViewModel]?) -> (Void))
+    {
+        guard let loggedUser = loginService.loggedUser, let conversationImpl = conversation as? ConversationViewModelImpl else {
+            completion(nil)
+            return
+        }
+
+        conversationsService.allMessages(forConversationSummary: conversationImpl.conversationSummary, loggedUser: loggedUser) { (messageResponse) -> (Void) in
+            print("messageResponse: \(messageResponse)")
+        }
+    }
 }

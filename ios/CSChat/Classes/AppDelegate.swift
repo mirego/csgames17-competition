@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.tintColor = .dustyOrange
+        window?.tintColor = .white
         window!.backgroundColor = UIColor.black
         window!.rootViewController = transitionViewController
         window!.makeKeyAndVisible()

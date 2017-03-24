@@ -1,5 +1,5 @@
 //
-//  ConversationSummary.swift
+//  Conversation.swift
 //  CSChat
 //
 //  Created by Hugo Lefrancois on 2017-03-24.
@@ -9,10 +9,10 @@
 import UIKit
 import ObjectMapper
 
-class ConversationSummary: Mappable
+class Conversation: Mappable
 {
     var id: String! = nil
-    var lastMessage: Message? = nil
+    var messages: [Message]? = nil
     var userIds: [String]?
 
     required init?(map: Map)
@@ -22,7 +22,7 @@ class ConversationSummary: Mappable
     func mapping(map: Map)
     {
         id <- map["_id"]
-        lastMessage <- map["lastMessage"]
+        messages <- map["messages"]
         userIds <- map["users"]
     }
 }
