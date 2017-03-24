@@ -28,6 +28,7 @@ public class HomeActivity extends BaseActivity {
         String userId = sharedPreferences.getString(Prefs.KEY_USER_ID, null);
         if (userId != null) {
             startActivity(new Intent(this, ConversationsActivity.class));
+            finish();
         }
     }
 

@@ -41,8 +41,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
-    // Picasso
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    // Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
 
     // Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.2.0'

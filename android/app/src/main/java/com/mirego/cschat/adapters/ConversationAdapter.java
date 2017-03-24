@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.mirego.cschat.R;
-import com.mirego.cschat.transforms.CircleTransform;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 import com.mirego.cschat.viewdatas.MessageViewData;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder> {
 
@@ -49,10 +49,9 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             if (messageViewData != null) {
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
-                Picasso.with(context).load(messageViewData.avatarUrl()).transform(new CircleTransform()).into(holder.ivAvatar);
+                Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
             }
         }
-
     }
 
     public void populateConversations(List<ConversationViewData> conversations) {
