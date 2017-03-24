@@ -10,5 +10,8 @@ import UIKit
 
 protocol MessageViewModel
 {
-
+    var name: String? { get }
+    var message: String? { get }
+    var date: String? { get }
+    var avatarUrl: String? { get }
 }

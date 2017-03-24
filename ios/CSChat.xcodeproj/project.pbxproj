@@ -37,6 +37,7 @@
 		F16BFAD01E85BBB80045120D /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFACF1E85BBB80045120D /* MessageViewModel.swift */; };
 		F16BFAD21E85BEFF0045120D /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD11E85BEFE0045120D /* MessageResponse.swift */; };
 		F16BFAD41E85BF270045120D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD31E85BF270045120D /* Conversation.swift */; };
+		F16BFAD61E85C6DE0045120D /* MessageViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */; };
 		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
 		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
 		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
@@ -95,6 +96,7 @@
 		F16BFACF1E85BBB80045120D /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		F16BFAD11E85BEFE0045120D /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		F16BFAD31E85BF270045120D /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModelImpl.swift; sourceTree = "<group>"; };
 		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				F18B845A1E85A32B007AA50B /* ConversationViewModelImpl.swift */,
+				F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16BFAD61E85C6DE0045120D /* MessageViewModelImpl.swift in Sources */,
 				F18B84521E859F1B007AA50B /* ConversationsService.swift in Sources */,
 				F18B84541E859FE4007AA50B /* ConversationResponse.swift in Sources */,
 				F16BFAD01E85BBB80045120D /* MessageViewModel.swift in Sources */,

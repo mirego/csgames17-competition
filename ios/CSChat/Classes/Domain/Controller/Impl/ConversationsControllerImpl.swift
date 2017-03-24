@@ -50,7 +50,17 @@ class ConversationsControllerImpl: ConversationsController
         }
 
         conversationsService.allMessages(forConversationSummary: conversationImpl.conversationSummary, loggedUser: loggedUser) { (messageResponse) -> (Void) in
-            print("messageResponse: \(messageResponse)")
+            if let messageResponse = messageResponse, let conversation = messageResponse.conversations?.first, let users = messageResponse.users {
+                var messageViewDatas: [MessageViewModel] = []
+                if let messages = conversation.messages {
+                    messages.forEach {
+                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users))
+                    }
+                }
+                completion(messageViewDatas)
+            } else {
+                completion(nil)
+            }
         }
     }
 }

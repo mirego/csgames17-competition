@@ -44,6 +44,12 @@ class MessagesViewController: BaseViewController
         conversationsController.allMessages(forConversation: conversationViewModel) { (messages) -> (Void) in
             if let messages = messages {
                 print("messages received: \(messages.count)")
+                messages.forEach {
+                    print("\($0.name ?? "")")
+                    print("\($0.message ?? "")")
+                    print("\($0.date ?? "")")
+                    print("\($0.avatarUrl ?? "")")
+                }
             } else {
                 print("nil messages received!!")
             }
