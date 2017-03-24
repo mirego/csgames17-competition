@@ -1,5 +1,6 @@
 package com.mirego.cschat.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -21,7 +22,7 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.btn_login)
     public void onLoginClicked() {
-
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     @OnClick(R.id.btn_login)
