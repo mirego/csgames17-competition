@@ -44,24 +44,30 @@
 
     <Button
         android:id="@+id/btn_register"
+        fontPath="@string/font_lato_bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:text="@string/register"
-        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:theme="@style/PinkishGreyButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/btn_login"
+        fontPath="@string/font_lato_bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:text="@string/login"
+        android:textAllCaps="false"
+        android:theme="@style/OrangeButton"
         app:layout_constraintBottom_toTopOf="@id/btn_register"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
