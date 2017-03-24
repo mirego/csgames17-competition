@@ -121,6 +121,9 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                         if (conversationViewData != null && conversationViewData.messages() != null) {
                             messageAdapter.populateMessages(conversationViewData.messages());
                         }
+                        if (conversationViewData != null && conversationViewData.conversationTitle() != null) {
+                            toolbar.setTitle(conversationViewData.conversationTitle());
+                        }
                         pbLoading.setVisibility(View.GONE);
                     }
                 }, new Consumer<Throwable>() {

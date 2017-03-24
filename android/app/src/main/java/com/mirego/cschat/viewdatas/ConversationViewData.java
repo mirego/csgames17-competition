@@ -42,6 +42,14 @@ public class ConversationViewData {
         return null;
     }
 
+    public String conversationTitle() {
+        User otherUser = otherUserFromIds(conversation.getUsers());
+        if (otherUser != null) {
+            return otherUser.getUsername();
+        }
+        return null;
+    }
+
 
     private User userForUserId(String userId) {
         if (users != null) {
