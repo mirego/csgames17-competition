@@ -36,6 +36,6 @@ exports.register = function (req, res) {
       res.json(user);
     });
   } else {
-    res.status(422).send('Missing required fields');
+    res.status(400).send('Missing required fields');
   }
 };

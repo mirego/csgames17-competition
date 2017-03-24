@@ -14,7 +14,7 @@ exports.list = function (req, res) {
           'users': conversation.users
         })
     );
-    returnConversationsWithUsers(req, res, conversations);
+    returnConversationsBetweenUsers(req, res, conversations);
   });
 };
 
@@ -26,14 +26,14 @@ exports.getById = function (req, res) {
     }
   };
   req.db.conversations.findOne(filter, function (e, conversation) {
-    returnConversationsWithUsers(req, res, [conversation]);
+    returnConversationsBetweenUsers(req, res, [conversation]);
   });
 };
 
 exports.create = function (req, res) {
   let userIds = req.body.users;
 
-  if (userIds && userIds.length === 2 && _.indexOf(userIds, req.params.user_id) !== -1) {
+  if (currentUserCreatesAConversationWithSomeoneElse(userIds, req)) {
     const filter = {
       '_id': {
         $in: userIds
@@ -55,18 +55,18 @@ exports.create = function (req, res) {
               'messages': []
             };
             req.db.conversations.insert(conversation, function (e, conversation) {
-              returnConversationsWithUsers(req, res, [conversation]);
+              returnConversationsBetweenUsers(req, res, [conversation]);
             });
           } else {
-            returnConversationsWithUsers(req, res, [conversation]);
+            returnConversationsBetweenUsers(req, res, [conversation]);
           }
         });
       } else {
-        res.status(422).send('Users not found for conversation');
+        res.status(404).send('Users not found for conversation');
       }
     });
   } else {
-    res.status(422).send('Conversations must have 2 users, including the current user');
+    res.status(400).send('Conversations must have 2 users, including the current user');
   }
 };
 
@@ -87,15 +87,15 @@ exports.addMessage = function (req, res) {
         'timestamp': (new Date()).toISOString()
       });
       req.db.conversations.update(filter, conversation, function () {
-        returnConversationsWithUsers(req, res, [conversation]);
+        returnConversationsBetweenUsers(req, res, [conversation]);
       });
     });
   } else {
-    res.status(422).send('Message cannot be empty');
+    res.status(400).send('Message cannot be empty');
   }
 };
 
-const returnConversationsWithUsers = function (req, res, conversations) {
+const returnConversationsBetweenUsers = function (req, res, conversations) {
   const filter = {
     '_id': {
       $in: conversations.reduce((users, conversation) => _.union(users, conversation.users), [])
@@ -110,4 +110,8 @@ const returnConversationsWithUsers = function (req, res, conversations) {
       'users': users
     });
   });
+
+  function currentUserCreatesAConversationWithSomeoneElse(userIds, req) {
+    return userIds && userIds.length === 2 && userIds.includes(req.params.user_id);
+  }
 };
