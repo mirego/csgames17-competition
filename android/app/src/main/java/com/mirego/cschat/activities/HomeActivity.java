@@ -25,7 +25,7 @@ public class HomeActivity extends BaseActivity {
         startActivity(new Intent(this, LoginActivity.class));
     }
 
-    @OnClick(R.id.btn_login)
+    @OnClick(R.id.btn_register)
     public void onRegisterClicked() {
         //FIXME:
     }
