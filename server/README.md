@@ -1,4 +1,4 @@
-# CS Games 2016 - Mobile - Server
+# CS Games 2017 - Mobile - Server
 
 This web server can be used to fetch and store data from the mobile application. It is built in **JavaScript** and uses an embedded datastore.
 
@@ -33,28 +33,21 @@ npm start
 
 The server should be accessible at [http://localhost:3000/]([http://localhost:3000/]).
 
+> **Pro Tip:** As it uses [`nodemon`](https://nodemon.io/) under the hood, the server should restart automatically when you modify any code file.
+
 ## How it works
 
-The server works as a simple REST API. It should be fairly straightforward, but if you want to know more about it, you can read on.
-
-### Objects
-
-Two types of objects are currently supported, with their own route:
-
-- `/messages`: Exchanges between users
-- `/users`: User basic information
-
-They both support basic HTTP operations (`GET`, `POST`, `PUT`, `DELETE`), but you can send any data in there – the request body is simply saved to the database as it is received.
+The server works as a simple REST API. It should be fairly straightforward, but if you want to know more about it, you can read the **[API Documentation](https://github.com/mirego/csgames17-competition/blob/master/DOCUMENTATION.md)**.
 
 There is no authentication or any data validation whatsoever, but this is enough to support the sample mobile applications.
 
-Depending on your solution, you may want to expand it and add new features, but you may also keep it as is and focus on the mobile application.
+Depending on your solution, you may want to expand it and add new features, but you may also leave it **as is** and focus on the mobile application.
 
 ### Database
 
-To simplify development and deployment, the project uses [NeDB](https://github.com/louischatriot/nedb), an embedded datastore that works automatically, without a binary. It is built using a subset of the MongoDB API, so it's very easy to use.
+To simplify development and deployment, the project uses [NeDB](https://github.com/louischatriot/nedb), an embedded datastore that works automatically, without any binary or prerequisite whatsoever. It is built using a subset of the MongoDB API, so it should be very easy to use.
 
-Each collection of documents is represented in its own instance of NeDB, and is persisted using a simple file that contains JSON objects.
+Each collection of documents is represented in its own instance of NeDB, and is persisted using a simple file that contains a list of JSON objects.
 
 ### Web front-end
 
@@ -79,9 +72,9 @@ The list is non-exhaustive, feel free to do anything you can think of!
 
 ## License
 
-This competition is © 2016 [Mirego](http://www.mirego.com) and may be freely
+This competition is © 2017 [Mirego](http://www.mirego.com) and may be freely
 distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
-See the [`LICENSE.md`](https://github.com/mirego/csgames16-competition/blob/master/LICENSE.md) file.
+See the [`LICENSE.md`](https://github.com/mirego/csgames17-competition/blob/master/LICENSE.md) file.
 
 ## About Mirego
 

@@ -9,8 +9,8 @@ const router = express.Router({
  */
 router.post('/', function(req, res) {
   let filter = {
-    "username": req.body.username.toLowerCase(),
-    "password": req.body.password
+    'username': req.body.username.toLowerCase(),
+    'password': req.body.password
   };
   let projection = {
     password: 0
