@@ -11,6 +11,7 @@ import com.mirego.cschat.R;
 import com.mirego.cschat.controller.ConversationController;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -45,6 +46,8 @@ public class ConversationActivity extends BaseActivity {
         super.onResume();
 
         fetchConversation();
+        createConversation();
+        createMessage();
     }
 
     private void fetchConversation() {
@@ -54,6 +57,44 @@ public class ConversationActivity extends BaseActivity {
                 .subscribe(new Consumer<ConversationViewData>() {
                     @Override
                     public void accept(@NonNull ConversationViewData conversationViewDatas) throws Exception {
+                        // todo
+                        int i = 0;
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        // todo
+                    }
+                });
+    }
+
+
+    private void createConversation() {
+        controller.createConversation("ZxPI0nf1mAAp4FSM")
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .subscribe(new Consumer<List<ConversationViewData>>() {
+                    @Override
+                    public void accept(@NonNull List<ConversationViewData> conversationViewDatas) throws Exception {
+                        // todo
+                        int i = 0;
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        // todo
+                    }
+                });
+    }
+
+
+    private void createMessage() {
+        controller.createMessage(getConversationId(), "This is a new message")
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .subscribe(new Consumer<ConversationViewData>() {
+                    @Override
+                    public void accept(@NonNull ConversationViewData conversationViewData) throws Exception {
                         // todo
                         int i = 0;
                     }

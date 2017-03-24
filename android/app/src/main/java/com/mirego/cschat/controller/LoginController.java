@@ -1,6 +1,6 @@
 package com.mirego.cschat.controller;
 
-import com.mirego.cschat.models.LoginRequest;
+import com.mirego.cschat.models.request.LoginRequest;
 import com.mirego.cschat.models.User;
 import com.mirego.cschat.services.CSChatService;
 import com.mirego.cschat.services.StorageService;

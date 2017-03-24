@@ -1,4 +1,4 @@
-package com.mirego.cschat.models;
+package com.mirego.cschat.models.request;
 
 public class LoginRequest {
 
