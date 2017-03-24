@@ -39,18 +39,6 @@ class LoginViewController: BaseViewController
         super.viewDidLayoutSubviews()
         mainView.focusUsername()
     }
-
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        //mainView.focusUsername()
-    }
-
-    override func viewDidAppear(_ animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        //mainView.focusUsername()
-    }
 }
 
 extension LoginViewController: LoginViewDelegate
