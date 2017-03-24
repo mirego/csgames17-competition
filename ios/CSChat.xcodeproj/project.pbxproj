@@ -16,7 +16,6 @@
 		E53776BA1E848E5800E39B08 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776B91E848E5800E39B08 /* Localization.swift */; };
 		E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C51E849C1400E39B08 /* BaseViewController.swift */; };
 		E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C81E849C9800E39B08 /* Stylesheet.swift */; };
-		E53776CD1E849D6100E39B08 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776CC1E849D6100E39B08 /* ConversationViewController.swift */; };
 		E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776CE1E849DBA00E39B08 /* Utilities.swift */; };
 		E53776DA1E84A2CF00E39B08 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E53776D71E84A2CF00E39B08 /* Lato-Bold.ttf */; };
 		E53776DB1E84A2CF00E39B08 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E53776D81E84A2CF00E39B08 /* Lato-Medium.ttf */; };
@@ -36,6 +35,11 @@
 		F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84341E84D6FC007AA50B /* LoginService.swift */; };
 		F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */; };
 		F18B843B1E84D87B007AA50B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B843A1E84D87B007AA50B /* ServiceFactory.swift */; };
+		F18B84461E8596FE007AA50B /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84441E8596FE007AA50B /* ConversationsView.swift */; };
+		F18B84471E8596FE007AA50B /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84451E8596FE007AA50B /* ConversationsViewController.swift */; };
+		F18B84491E859A65007AA50B /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84481E859A65007AA50B /* ConversationsController.swift */; };
+		F18B844E1E859B82007AA50B /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B844D1E859B82007AA50B /* ConversationViewModel.swift */; };
+		F18B84501E859BD5007AA50B /* ConversationsControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B844F1E859BD5007AA50B /* ConversationsControllerImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +57,6 @@
 		E53776B91E848E5800E39B08 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E53776C51E849C1400E39B08 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E53776C81E849C9800E39B08 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
-		E53776CC1E849D6100E39B08 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		E53776CE1E849DBA00E39B08 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E53776D71E84A2CF00E39B08 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E53776D81E84A2CF00E39B08 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
@@ -74,6 +77,11 @@
 		F18B84341E84D6FC007AA50B /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginServiceImpl.swift; sourceTree = "<group>"; };
 		F18B843A1E84D87B007AA50B /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		F18B84441E8596FE007AA50B /* ConversationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
+		F18B84451E8596FE007AA50B /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		F18B84481E859A65007AA50B /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		F18B844D1E859B82007AA50B /* ConversationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		F18B844F1E859BD5007AA50B /* ConversationsControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsControllerImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,7 @@
 				F17FBC651E84CBCA00A0A56E /* Controller */,
 				F18B84311E84D6FC007AA50B /* Model */,
 				F18B84331E84D6FC007AA50B /* Service */,
+				F18B844C1E859B6C007AA50B /* ViewModel */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -171,7 +180,7 @@
 			children = (
 				E53776C41E849C0900E39B08 /* Base */,
 				E53776E51E84B4B900E39B08 /* Common */,
-				E53776CB1E849D5100E39B08 /* Conversation */,
+				F18B84431E8596FE007AA50B /* Conversations */,
 				E53776CA1E849D4600E39B08 /* Home */,
 				E53776C71E849C8700E39B08 /* Stylesheet */,
 				E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */,
@@ -213,14 +222,6 @@
 				E53776DD1E84A3A600E39B08 /* HomeView.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		E53776CB1E849D5100E39B08 /* Conversation */ = {
-			isa = PBXGroup;
-			children = (
-				E53776CC1E849D6100E39B08 /* ConversationViewController.swift */,
-			);
-			path = Conversation;
 			sourceTree = "<group>";
 		};
 		E53776D61E84A2CF00E39B08 /* Fonts */ = {
@@ -266,6 +267,7 @@
 			children = (
 				F17FBC6A1E84CC1300A0A56E /* Impl */,
 				F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */,
+				F18B84481E859A65007AA50B /* ConversationsController.swift */,
 				F17FBC681E84CBFD00A0A56E /* LoginController.swift */,
 			);
 			path = Controller;
@@ -274,6 +276,7 @@
 		F17FBC6A1E84CC1300A0A56E /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				F18B844F1E859BD5007AA50B /* ConversationsControllerImpl.swift */,
 				F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */,
 			);
 			path = Impl;
@@ -303,6 +306,23 @@
 				F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */,
 			);
 			path = Impl;
+			sourceTree = "<group>";
+		};
+		F18B84431E8596FE007AA50B /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				F18B84451E8596FE007AA50B /* ConversationsViewController.swift */,
+				F18B84441E8596FE007AA50B /* ConversationsView.swift */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		F18B844C1E859B6C007AA50B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F18B844D1E859B82007AA50B /* ConversationViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,20 +458,24 @@
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
 				E53776981E848BC200E39B08 /* HomeViewController.swift in Sources */,
 				F18B843B1E84D87B007AA50B /* ServiceFactory.swift in Sources */,
+				F18B844E1E859B82007AA50B /* ConversationViewModel.swift in Sources */,
 				E53776E71E84B4D500E39B08 /* GenericButton.swift in Sources */,
-				E53776CD1E849D6100E39B08 /* ConversationViewController.swift in Sources */,
 				E53776DE1E84A3A600E39B08 /* HomeView.swift in Sources */,
 				E53776F21E84C33100E39B08 /* TextField.swift in Sources */,
 				E53776961E848BC200E39B08 /* AppDelegate.swift in Sources */,
 				F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */,
+				F18B84491E859A65007AA50B /* ConversationsController.swift in Sources */,
 				E53776EC1E84BACF00E39B08 /* LoginView.swift in Sources */,
 				F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */,
 				E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */,
 				E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */,
 				E53776BA1E848E5800E39B08 /* Localization.swift in Sources */,
+				F18B84461E8596FE007AA50B /* ConversationsView.swift in Sources */,
 				F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */,
+				F18B84471E8596FE007AA50B /* ConversationsViewController.swift in Sources */,
 				E53776EA1E84BA1500E39B08 /* LoginViewController.swift in Sources */,
 				E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */,
+				F18B84501E859BD5007AA50B /* ConversationsControllerImpl.swift in Sources */,
 				E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */,
 				E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */,
 				F18B84371E84D6FC007AA50B /* User.swift in Sources */,

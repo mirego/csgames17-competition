@@ -21,4 +21,9 @@ class ControllerFactory
     {
         return LoginControllerImpl(loginService: serviceFactory.loginService())
     }
+
+    func conversationsController() -> ConversationsController
+    {
+        return ConversationsControllerImpl()
+    }
 }

@@ -60,9 +60,11 @@ extension LoginViewController: LoginViewDelegate
         mainView.showLoading(true)
 
         loginController.login(username: username, password: password) { [weak self] (success) -> (Void) in
+            guard let strongSelf = self else { return }
             if success {
+                strongSelf.navigationController?.pushViewController(strongSelf.viewControllerFactory.conversationsViewController(), animated: true)
             } else {
-                self?.mainView.showLoading(false)
+                strongSelf.mainView.showLoading(false)
             }
         }
     }

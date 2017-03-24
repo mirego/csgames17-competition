@@ -26,6 +26,11 @@ class ViewControllerFactory
     {
         return assign(LoginViewController(loginController: controllerFactory.loginController()))
     }
+
+    func conversationsViewController() -> ConversationsViewController
+    {
+        return assign(ConversationsViewController(conversationsController: controllerFactory.conversationsController()))
+    }
 }
 
 // MARK Helpers
