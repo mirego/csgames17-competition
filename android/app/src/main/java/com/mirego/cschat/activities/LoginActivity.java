@@ -1,7 +1,5 @@
 package com.mirego.cschat.activities;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.mirego.cschat.CSChatApplication;
-import com.mirego.cschat.Prefs;
 import com.mirego.cschat.R;
 import com.mirego.cschat.controller.LoginController;
 import com.mirego.cschat.models.User;
@@ -50,19 +47,8 @@ public class LoginActivity extends BaseActivity {
 
         ((CSChatApplication) getApplication()).component().inject(this);
 
-        loadUsername();
     }
-
-    private void loadUsername() {
-
-        SharedPreferences sharedPreferences = this.getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
-
-        String username = sharedPreferences.getString(Prefs.KEY_USERNAME, null);
-        if (username != null) {
-            etUsername.setText(username);
-        }
-    }
-
+    
     @OnClick(R.id.btn_login_submit)
     void onLoginClicked() {
         loginController.login(etUsername.getText().toString(), etPassword.getText().toString())
