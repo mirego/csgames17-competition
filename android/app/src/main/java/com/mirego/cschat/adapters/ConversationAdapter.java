@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.mirego.cschat.R;
 import com.mirego.cschat.viewdatas.ConversationViewData;
+import com.mirego.cschat.viewdatas.MessageViewData;
 
 import java.util.List;
 
@@ -37,7 +39,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
         ConversationViewData conversationViewData = conversations.get(position);
         if (conversationViewData != null) {
+            MessageViewData messageViewData = conversationViewData.lastMessage();
 
+            if (messageViewData != null) {
+                holder.tvLastMessage.setText(messageViewData.message());
+                holder.tvTimestamp.setText(messageViewData.timestamp());
+            }
         }
 
     }
@@ -59,6 +66,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
         @BindView(R.id.iv_avatar)
         ImageView ivAvatar;
+
+        @BindView(R.id.tv_conversation_last_message)
+        TextView tvLastMessage;
+
+        @BindView(R.id.tv_conversation_timestamp)
+        TextView tvTimestamp;
 
         public ConversationViewHolder(View itemView) {
             super(itemView);
