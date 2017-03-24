@@ -1,8 +1,11 @@
-package com.mirego.cschat.models;
+package com.mirego.cschat.models.response;
+
+import com.mirego.cschat.models.Conversation;
+import com.mirego.cschat.models.User;
 
 import java.util.List;
 
-public class ConversationResponse {
+public class ConversationsResponse {
 
     private List<Conversation> conversations;
 

@@ -69,12 +69,7 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     }
 
     private void configureConversationsRecyclerView() {
-        conversationAdapter = new ConversationAdapter(this, new ConversationAdapter.ConversationAdapterListener() {
-            @Override
-            public void onConversationClicked(ConversationViewData conversationViewData) {
-                // TODO:
-            }
-        });
+        conversationAdapter = new ConversationAdapter(this, this);
         rvConversations.setLayoutManager(new LinearLayoutManager(this));
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(getResources().getDrawable(R.drawable.list_spacing, null));
@@ -125,6 +120,6 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
 
     @Override
     public void onConversationClicked(ConversationViewData conversationViewData) {
-        //TODO:
+        startActivity(ConversationActivity.intent(this, conversationViewData.id()));
     }
 }

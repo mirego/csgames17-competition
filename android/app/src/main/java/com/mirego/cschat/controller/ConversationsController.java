@@ -2,7 +2,7 @@ package com.mirego.cschat.controller;
 
 
 import com.mirego.cschat.models.Conversation;
-import com.mirego.cschat.models.ConversationResponse;
+import com.mirego.cschat.models.response.ConversationsResponse;
 import com.mirego.cschat.services.CSChatService;
 import com.mirego.cschat.services.StorageService;
 import com.mirego.cschat.viewdatas.ConversationViewData;
@@ -26,12 +26,12 @@ public class ConversationsController {
 
     public Flowable<List<ConversationViewData>> getConversations() {
         return chatService.fetchConversations(storageService.currentUserId())
-                .map(new Function<ConversationResponse, List<ConversationViewData>>() {
+                .map(new Function<ConversationsResponse, List<ConversationViewData>>() {
                     @Override
-                    public List<ConversationViewData> apply(@NonNull ConversationResponse conversationResponses) throws Exception {
+                    public List<ConversationViewData> apply(@NonNull ConversationsResponse conversationsResponses) throws Exception {
                         List<ConversationViewData> conversationViewDatum = new ArrayList<>();
-                        for (Conversation conversation : conversationResponses.getConversations()) {
-                            conversationViewDatum.add(new ConversationViewData(conversation, conversationResponses.getUsers(), storageService.currentUserId()));
+                        for (Conversation conversation : conversationsResponses.getConversations()) {
+                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponses.getUsers()));
                         }
                         return conversationViewDatum;
                     }

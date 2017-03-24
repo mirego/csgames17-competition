@@ -1,5 +1,6 @@
 package com.mirego.cschat;
 
+import com.mirego.cschat.controller.ConversationController;
 import com.mirego.cschat.controller.ConversationsController;
 import com.mirego.cschat.controller.LoginController;
 import com.mirego.cschat.services.CSChatService;
@@ -53,6 +54,11 @@ class AndroidModule {
     @Provides
     ConversationsController provideConversationsController(CSChatService chatService, StorageService storageService) {
         return new ConversationsController(chatService, storageService);
+    }
+
+    @Provides
+    ConversationController proviceConversationController(CSChatService chatService, StorageService storageService) {
+        return new ConversationController(chatService, storageService);
     }
 
 }

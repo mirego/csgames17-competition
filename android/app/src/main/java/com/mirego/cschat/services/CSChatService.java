@@ -1,6 +1,6 @@
 package com.mirego.cschat.services;
 
-import com.mirego.cschat.models.ConversationResponse;
+import com.mirego.cschat.models.response.ConversationsResponse;
 import com.mirego.cschat.models.LoginRequest;
 import com.mirego.cschat.models.User;
 
@@ -16,6 +16,9 @@ public interface CSChatService {
     Flowable<User> login(@Body LoginRequest loginRequest);
 
     @GET("users/{userId}/conversations")
-    Flowable<ConversationResponse> fetchConversations(@Path("userId") String userId);
+    Flowable<ConversationsResponse> fetchConversations(@Path("userId") String userId);
+
+    @GET("users/{userId}/conversations/{id}")
+    Flowable<ConversationsResponse> fetchConversation(@Path("userId") String userId, @Path("id") String conversationId);
 
 }
