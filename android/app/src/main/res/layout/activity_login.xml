@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_login"
-        android:hint="@string/login_password"
+        android:hint="@string/login_username"
         android:textColorHint="@color/purpleyGrey"
         app:layout_marginTopPercent="10%">
 
