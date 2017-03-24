@@ -28,6 +28,10 @@
 		E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776ED1E84BB8300E39B08 /* TextButton.swift */; };
 		E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */; };
 		E53776F21E84C33100E39B08 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776F11E84C33100E39B08 /* TextField.swift */; };
+		F16BFAC21E85AEEE0045120D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC11E85AEEE0045120D /* Observable.swift */; };
+		F16BFAC61E85B1D80045120D /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC41E85B1D80045120D /* TransitionView.swift */; };
+		F16BFAC71E85B1D80045120D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC51E85B1D80045120D /* TransitionViewController.swift */; };
+		F16BFAC91E85B37B0045120D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC81E85B37B0045120D /* NavigationController.swift */; };
 		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
 		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
 		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
@@ -77,6 +81,10 @@
 		E53776ED1E84BB8300E39B08 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E53776F11E84C33100E39B08 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F16BFAC11E85AEEE0045120D /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F16BFAC41E85B1D80045120D /* TransitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
+		F16BFAC51E85B1D80045120D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		F16BFAC81E85B37B0045120D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 				F18B84431E8596FE007AA50B /* Conversations */,
 				E53776CA1E849D4600E39B08 /* Home */,
 				E53776C71E849C8700E39B08 /* Stylesheet */,
+				F16BFAC31E85B1D80045120D /* Transition */,
 				E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */,
 			);
 			path = UI;
@@ -206,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				E53776B91E848E5800E39B08 /* Localization.swift */,
+				F16BFAC11E85AEEE0045120D /* Observable.swift */,
 				E53776DF1E84AA9000E39B08 /* UIView+MCLayout.swift */,
 				E53776CE1E849DBA00E39B08 /* Utilities.swift */,
 			);
@@ -216,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				E53776C51E849C1400E39B08 /* BaseViewController.swift */,
+				F16BFAC81E85B37B0045120D /* NavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -274,6 +285,15 @@
 				0E9D8E44E9858BD84D8492C9 /* Pods_CSChat.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F16BFAC31E85B1D80045120D /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				F16BFAC51E85B1D80045120D /* TransitionViewController.swift */,
+				F16BFAC41E85B1D80045120D /* TransitionView.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 		F17FBC651E84CBCA00A0A56E /* Controller */ = {
@@ -485,6 +505,7 @@
 				F18B84521E859F1B007AA50B /* ConversationsService.swift in Sources */,
 				F18B84541E859FE4007AA50B /* ConversationResponse.swift in Sources */,
 				F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */,
+				F16BFAC61E85B1D80045120D /* TransitionView.swift in Sources */,
 				F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */,
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
 				F18B84561E85A0AF007AA50B /* ConversationSummary.swift in Sources */,
@@ -494,15 +515,18 @@
 				F18B844E1E859B82007AA50B /* ConversationViewModel.swift in Sources */,
 				F18B845D1E85A73F007AA50B /* ConversationsServiceImpl.swift in Sources */,
 				E53776E71E84B4D500E39B08 /* GenericButton.swift in Sources */,
+				F16BFAC21E85AEEE0045120D /* Observable.swift in Sources */,
 				E53776DE1E84A3A600E39B08 /* HomeView.swift in Sources */,
 				E53776F21E84C33100E39B08 /* TextField.swift in Sources */,
 				E53776961E848BC200E39B08 /* AppDelegate.swift in Sources */,
 				F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */,
 				F18B84491E859A65007AA50B /* ConversationsController.swift in Sources */,
+				F16BFAC71E85B1D80045120D /* TransitionViewController.swift in Sources */,
 				E53776EC1E84BACF00E39B08 /* LoginView.swift in Sources */,
 				F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */,
 				E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */,
 				E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */,
+				F16BFAC91E85B37B0045120D /* NavigationController.swift in Sources */,
 				E53776BA1E848E5800E39B08 /* Localization.swift in Sources */,
 				F18B84461E8596FE007AA50B /* ConversationsView.swift in Sources */,
 				F18B845F1E85A76D007AA50B /* HttpConst.swift in Sources */,

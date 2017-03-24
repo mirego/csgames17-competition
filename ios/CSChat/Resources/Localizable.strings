@@ -17,3 +17,5 @@
 "LOGIN_BACK_BUTTON" = "< Back";
 "LOGIN_USERNAME_HINT" = "Username";
 "LOGIN_PASSWORD_HINT" = "Password";
+
+"CONVERSATIONS_TITLE" = "Conversations";

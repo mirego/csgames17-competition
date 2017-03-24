@@ -23,7 +23,13 @@ class BaseViewController: UIViewController
     {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.latoBold(17), NSForegroundColorAttributeName: UIColor.white]
+    }
 }
 
 // MARK: Loading Indicator

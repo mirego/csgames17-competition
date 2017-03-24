@@ -21,6 +21,8 @@ class ConversationsViewController: BaseViewController
         self.conversationsController = conversationsController
 
         super.init()
+
+        title = LocalizedString("CONVERSATIONS_TITLE")
     }
 
     required init(coder aDecoder: NSCoder)
@@ -50,5 +52,11 @@ class ConversationsViewController: BaseViewController
                 print("Error!!")
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.layer.removeAllAnimations()
     }
 }

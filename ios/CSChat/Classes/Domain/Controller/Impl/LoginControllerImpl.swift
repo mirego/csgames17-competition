@@ -12,6 +12,10 @@ class LoginControllerImpl: LoginController
 {
     private let loginService: LoginService
 
+    var isLoggedObservable: Observable<Bool> {
+        return loginService.isLoggedObservable
+    }
+
     init(loginService: LoginService)
     {
         self.loginService = loginService

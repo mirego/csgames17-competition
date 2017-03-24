@@ -14,6 +14,8 @@ class LoginServiceImpl: LoginService
 {
     var loggedUser: User?
 
+    var isLoggedObservable: Observable<Bool> = Observable<Bool>()
+
     func login(username: String, password: String, completion: @escaping (_ user: User?) -> (Void))
     {
         let url = HttpConst.baseUrl + "login"
@@ -23,11 +25,14 @@ class LoginServiceImpl: LoginService
             if let statusCode = response.response?.statusCode {
                 if (statusCode >= 200 && statusCode < 300) {
                     self.loggedUser = response.result.value
+                    self.isLoggedObservable.notify(data: true)
                     completion(response.result.value)
                 } else {
+                    self.isLoggedObservable.notify(data: false)
                     completion(nil)
                 }
             } else {
+                self.isLoggedObservable.notify(data: false)
                 completion(nil)
             }
         }
