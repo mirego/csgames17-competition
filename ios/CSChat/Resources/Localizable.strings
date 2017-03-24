@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  CSChat
+
+  Created by Émile Bélair on 17-03-23.
+  Copyright © 2017 Mirego. All rights reserved.
+*/
+
+"HOME_TITLE" = "Welcome to CSChat";
+"HOME_SUBTITLE" = "Please login or register below.";
+
+"LOGIN_BUTTON" = "Login";
+"REGISTER_BUTTON" = "Register";
+
+"LOGIN_TITLE" = "Login";
+"LOGIN_CONTINUE_BUTTON" = "Continues";
+"LOGIN_BACK_BUTTON" = "< Back";
+"LOGIN_USERNAME_HINT" = "Username";
+"LOGIN_PASSWORD_HINT" = "Password";

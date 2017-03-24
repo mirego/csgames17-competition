@@ -1,21 +1,52 @@
 PODS:
   - Alamofire (4.4.0)
-  - MCUIColorUtils (1.0.0)
+  - BRYParseKeyboardNotification (1.0.1)
+  - GestureRecognizerClosures (3.0.0)
+  - MCUIColorUtils (1.0.1)
   - MCUIViewLayout (0.5.1)
+  - MRGTaylor (1.0)
+  - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
-  - MCUIColorUtils
-  - MCUIViewLayout
+  - BRYParseKeyboardNotification
+  - GestureRecognizerClosures
+  - MCUIColorUtils (from `https://github.com/mirego/MCUIColorUtils.git`)
+  - MCUIViewLayout (from `https://github.com/mirego/MCUIViewLayout.git`)
+  - MRGTaylor (from `https://github.com/mirego/taylor-ios.git`)
+  - SVProgressHUD
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  MCUIColorUtils:
+    :git: https://github.com/mirego/MCUIColorUtils.git
+  MCUIViewLayout:
+    :git: https://github.com/mirego/MCUIViewLayout.git
+  MRGTaylor:
+    :git: https://github.com/mirego/taylor-ios.git
+
+CHECKOUT OPTIONS:
+  MCUIColorUtils:
+    :commit: ef06e77e18d8bd5c2febdc3505250b648f01b6ed
+    :git: https://github.com/mirego/MCUIColorUtils.git
+  MCUIViewLayout:
+    :commit: d125e667c126c73452411822209f189c5b94bb09
+    :git: https://github.com/mirego/MCUIViewLayout.git
+  MRGTaylor:
+    :commit: f52a6809cd65ccd5a64100e5968a314e764305b2
+    :git: https://github.com/mirego/taylor-ios.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  MCUIColorUtils: 6f11e1702db4ff5419d28cba1e8f7a82dd82d5fe
+  BRYParseKeyboardNotification: c0d369594604bf7a77994a2f1133a785af104412
+  GestureRecognizerClosures: a57e37768b1b28d534c13f5126916eb917519601
+  MCUIColorUtils: d99a916bf2eacff39009e2a291fdea5d0de423a4
   MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
+  MRGTaylor: 5b841794b1ea32b3dfec3d9e1bc971c4fe6f73a1
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6d10d47d99c398eca0d4009ea46bd1f2f7904341
+PODFILE CHECKSUM: 86e2a49f3720875b7918811b5f1cb78a251c7b55
 
 COCOAPODS: 1.2.0

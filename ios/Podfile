@@ -1,11 +1,17 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
-target 'Sample App' do
+target 'CSChat' do
   use_frameworks!
 
+  # 3rd party
   pod 'Alamofire'
-  pod 'MCUIColorUtils'
-  pod 'MCUIViewLayout'
+  pod 'SVProgressHUD'
   pod 'SwiftyJSON'
+  pod 'GestureRecognizerClosures'
+  pod 'BRYParseKeyboardNotification'
+
+  # Public - Mirego
+  pod 'MCUIColorUtils', :git => 'https://github.com/mirego/MCUIColorUtils.git'
+  pod 'MCUIViewLayout', :git => 'https://github.com/mirego/MCUIViewLayout.git'
+  pod 'MRGTaylor', :git => 'https://github.com/mirego/taylor-ios.git'
 end
