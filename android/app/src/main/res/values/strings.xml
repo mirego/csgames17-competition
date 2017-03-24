@@ -13,4 +13,6 @@
     <string name="login_error">Invalid username or password</string>
     <string name="logout">Logout</string>
     <string name="network_error">Ooops, something went wrong</string>
+    <string name="send">Send</string>
+    <string name="send_message_hint">Type a message...</string>
 </resources>

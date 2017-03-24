@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
@@ -25,6 +27,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
@@ -46,6 +49,8 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
     @BindView(R.id.conversation_root)
     ViewGroup root;
 
+    @BindView(R.id.edt_message_input)
+    EditText edtMessageInput;
 
     private MessageAdapter messageAdapter;
 
@@ -87,8 +92,6 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
         } else {
             createConversation("ZxPI0nf1mAAp4FSM");
         }
-
-        //createMessage();
     }
 
     @Override
@@ -107,9 +110,9 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Consumer<ConversationViewData>() {
                     @Override
-                    public void accept(@NonNull ConversationViewData conversationViewDatas) throws Exception {
-                        if (conversationViewDatas != null && conversationViewDatas.messages() != null) {
-                            messageAdapter.populateMessages(conversationViewDatas.messages());
+                    public void accept(@NonNull ConversationViewData conversationViewData) throws Exception {
+                        if (conversationViewData != null && conversationViewData.messages() != null) {
+                            messageAdapter.populateMessages(conversationViewData.messages());
                         }
                     }
                 }, new Consumer<Throwable>() {
@@ -140,20 +143,31 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
     }
 
 
-    private void createMessage() {
-        controller.createMessage(getConversationId(), "This is a new message")
+    @OnClick(R.id.btn_send_message)
+    public void onSendMessageClicked() {
+        edtMessageInput.setText("");
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(edtMessageInput.getWindowToken(), 0);
+
+        createMessage(edtMessageInput.getText().toString());
+    }
+
+    private void createMessage(String message) {
+        controller.createMessage(getConversationId(), message)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Consumer<ConversationViewData>() {
                     @Override
                     public void accept(@NonNull ConversationViewData conversationViewData) throws Exception {
-                        // todo
-                        int i = 0;
+                        if (conversationViewData != null && conversationViewData.messages() != null) {
+                            messageAdapter.populateMessages(conversationViewData.messages());
+                        }
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
-                        // todo
+                        Snackbar.make(root, R.string.network_error, Snackbar.LENGTH_SHORT).show();
                     }
                 });
     }

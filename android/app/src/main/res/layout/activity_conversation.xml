@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/conversation_root"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/conversation_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -17,7 +16,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -25,7 +24,40 @@
         android:id="@+id/rv_conversation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:paddingBottom="48dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:background="@color/almostWhite"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_message_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dustyOrange"
+            android:textColorHint="@color/purpleyGrey"
+            android:textColor="@color/purpleyGrey"
+            android:hint="@string/send_message_hint"
+            android:layout_marginLeft="16dp"
+            android:paddingRight="8dp" />
+
+        <Button
+            android:id="@+id/btn_send_message"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            fontPath="@string/font_lato_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/send"
+            android:textAllCaps="false"
+            android:textColor="@color/dustyOrange"
+            android:textSize="16dp" />
+
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
