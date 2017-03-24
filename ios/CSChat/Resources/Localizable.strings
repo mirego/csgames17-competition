@@ -13,7 +13,7 @@
 "REGISTER_BUTTON" = "Register";
 
 "LOGIN_TITLE" = "Login";
-"LOGIN_CONTINUE_BUTTON" = "Continues";
+"LOGIN_CONTINUE_BUTTON" = "Continue";
 "LOGIN_BACK_BUTTON" = "< Back";
 "LOGIN_USERNAME_HINT" = "Username";
 "LOGIN_PASSWORD_HINT" = "Password";
