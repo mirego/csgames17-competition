@@ -61,11 +61,19 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
         configureConversationsRecyclerView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fetchConversations();
+    }
+
     private void configureConversationsRecyclerView() {
         conversationAdapter = new ConversationAdapter(this);
         rvConversations.setLayoutManager(new LinearLayoutManager(this));
         rvConversations.setAdapter(conversationAdapter);
+    }
 
+    private void fetchConversations() {
         conversationsController.getConversations()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
