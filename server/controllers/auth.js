@@ -1,13 +1,7 @@
-const express = require('express');
 
-const router = express.Router({
-  mergeParams: true
-});
+exports.login = function (req, res) {
+  console.log(req);
 
-/*
- * Login with password
- */
-router.post('/', function(req, res) {
   let filter = {
     'username': req.body.username.toLowerCase(),
     'password': req.body.password
@@ -15,13 +9,11 @@ router.post('/', function(req, res) {
   let projection = {
     password: 0
   };
-  req.db.users.findOne(filter, projection, function(e, user) {
+  req.db.users.findOne(filter, projection, function (e, user) {
     if (user) {
       res.json(user);
     } else {
       res.status(401).send('Username or password invalid');
     }
   });
-});
-
-module.exports = router;
+};
