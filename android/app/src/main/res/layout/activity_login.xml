@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_marginTopPercent="6%"
-        android:hint="@string/login_submit"
+        android:text="@string/login_submit"
         android:layout_below="@id/et_password"
         android:textSize="20dp"/>
 

@@ -42,6 +42,7 @@ dependencies {
 
     // Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
 
     // Dagger
     compile 'com.google.dagger:dagger:2.10'

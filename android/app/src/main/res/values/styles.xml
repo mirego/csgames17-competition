@@ -31,6 +31,7 @@
         <item name="colorControlActivated">@color/dustyOrangeDark</item>
         <item name="colorControlHighlight">@color/dustyOrangeDark</item>
         <item name="fontPath">@string/font_lato_bold</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
 </resources>
