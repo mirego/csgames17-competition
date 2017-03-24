@@ -7,6 +7,7 @@ import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends BaseActivity {
 
@@ -16,6 +17,16 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         ((CSChatApplication) getApplication()).component().inject(this);
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.btn_login)
+    public void onLoginClicked() {
+
+    }
+
+    @OnClick(R.id.btn_login)
+    public void onRegisterClicked() {
+        //FIXME:
     }
 
 }
