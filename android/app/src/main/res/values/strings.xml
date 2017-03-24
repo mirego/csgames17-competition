@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Sample App</string>
-    
     <string name="login_title">Login</string>
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
     <string name="login_submit">Continue</string>
+    <string name="app_name">CSChat</string>
+    <string name="welcome_title">Welcome to CSChat</string>
+    <string name="welcome_subtitle">Please login or register below.</string>
 </resources>
