@@ -49,7 +49,7 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     }
 
     @Override
-    public void onConversationClciked(ConversationViewData conversationViewData) {
+    public void onConversationClicked(ConversationViewData conversationViewData) {
         //TODO:
     }
 }

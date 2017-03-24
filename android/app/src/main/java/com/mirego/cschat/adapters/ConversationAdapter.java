@@ -82,7 +82,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
     public interface ConversationAdapterListener {
 
-        void onConversationClciked(ConversationViewData conversationViewData);
+        void onConversationClicked(ConversationViewData conversationViewData);
 
     }
 
