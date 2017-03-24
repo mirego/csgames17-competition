@@ -8,10 +8,15 @@ import java.util.List;
 
 public class ConversationViewData {
 
-    private Conversation conversation;
+    private final Conversation conversation;
+    private final List<UserViewData> userViewDatas;
 
-    public ConversationViewData(Conversation conversation) {
+    public ConversationViewData(Conversation conversation, List<User> users) {
         this.conversation = conversation;
+        userViewDatas = new ArrayList<>();
+        for (User user : users) {
+            userViewDatas.add(new UserViewData(user));
+        }
     }
 
     public MessageViewData lastMessage() {
@@ -19,13 +24,7 @@ public class ConversationViewData {
     }
 
     public List<UserViewData> users() {
-        List<UserViewData> users = new ArrayList<>();
-        if (conversation.getUsers() != null) {
-            for (User user : conversation.getUsers()) {
-                users.add(new UserViewData(user));
-            }
-        }
-        return users;
+        return userViewDatas;
     }
 
 }

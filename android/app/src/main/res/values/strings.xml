@@ -11,4 +11,5 @@
     <string name="conversations_title">Conversations</string>
     <string name="login_error">Invalid username or password</string>
     <string name="logout">Logout</string>
+    <string name="network_error">Ooops, something went wrong</string>
 </resources>
