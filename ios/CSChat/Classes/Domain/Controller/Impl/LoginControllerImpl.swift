@@ -27,4 +27,9 @@ class LoginControllerImpl: LoginController
             completion(user != nil)
         }
     }
+
+    func logout()
+    {
+        loginService.logout()
+    }
 }

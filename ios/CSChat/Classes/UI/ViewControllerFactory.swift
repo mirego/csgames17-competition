@@ -29,7 +29,7 @@ class ViewControllerFactory
 
     func conversationsViewController() -> ConversationsViewController
     {
-        return assign(ConversationsViewController(conversationsController: controllerFactory.conversationsController()))
+        return assign(ConversationsViewController(conversationsController: controllerFactory.conversationsController(), loginController: controllerFactory.loginController()))
     }
 }
 

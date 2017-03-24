@@ -15,4 +15,6 @@ protocol LoginService
     var isLoggedObservable: Observable<Bool> { get }
 
     func login(username: String, password: String, completion: @escaping (_ user: User?) -> (Void))
+
+    func logout()
 }

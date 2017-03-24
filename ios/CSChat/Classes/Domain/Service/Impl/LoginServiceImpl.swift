@@ -37,4 +37,10 @@ class LoginServiceImpl: LoginService
             }
         }
     }
+
+    func logout()
+    {
+        loggedUser = nil
+        isLoggedObservable.notify(data: false)
+    }
 }

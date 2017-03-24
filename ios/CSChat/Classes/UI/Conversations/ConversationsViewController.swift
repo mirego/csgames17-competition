@@ -15,14 +15,20 @@ class ConversationsViewController: BaseViewController
     }
 
     private let conversationsController: ConversationsController
+    private let loginController: LoginController
 
-    init(conversationsController: ConversationsController)
+    init(conversationsController: ConversationsController, loginController: LoginController)
     {
         self.conversationsController = conversationsController
+        self.loginController = loginController
 
         super.init()
 
         title = LocalizedString("CONVERSATIONS_TITLE")
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "btnLogout")!.withRenderingMode(.alwaysOriginal), style: .plain) { [weak self] _ in
+            self?.loginController.logout()
+        }
     }
 
     required init(coder aDecoder: NSCoder)
