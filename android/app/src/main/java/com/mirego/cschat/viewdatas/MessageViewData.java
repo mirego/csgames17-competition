@@ -25,10 +25,16 @@ public class MessageViewData {
     }
 
     public String avatarUrl() {
-        return user.getAvatarUrl();
+        if (user != null) {
+            return user.getAvatarUrl();
+        }
+        return null;
     }
 
     public String username() {
-        return user.getUsername();
+        if (user != null) {
+            return user.getUsername();
+        }
+        return null;
     }
 }

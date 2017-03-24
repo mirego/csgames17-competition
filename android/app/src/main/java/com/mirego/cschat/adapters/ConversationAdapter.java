@@ -54,7 +54,9 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             MessageViewData messageViewData = conversationViewData.lastMessage();
 
             if (messageViewData != null) {
-                holder.tvTitle.setText(messageViewData.username());
+                if (messageViewData.username() != null) {
+                    holder.tvTitle.setText(messageViewData.username());
+                }
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
                 Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);

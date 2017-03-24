@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/dustyOrange</item>
-        <item name="colorControlNormal">@color/purpleyGrey</item>
+        <item name="colorControlNormal">@color/white</item>
         <item name="colorControlHighlight">@color/pinkishGrey</item>
     </style>
 
