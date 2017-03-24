@@ -66,6 +66,7 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
         int id = item.getItemId();
         if (id == R.id.action_logout) {
             loginController.logout();
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
