@@ -26,6 +26,8 @@ Validate a user's credentials.
 
 `401 Unauthorized` Invalid credentials.
 
+---
+
 #### POST `/users`
 
 Register a new user.

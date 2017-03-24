@@ -59,14 +59,15 @@ So, what's the room for improvement?
 
 Here are some features you could add to this server:
 
-- User registration and authentication
-- Associated users and messages
+- Real user registration and authentication
+- Optimized data structure
 - Request data security
 - Request data validation
 - Persisted data encryption
 - Persisted data compression
+- Image messaging
+- Video messaging
 - Socket communication for real-time messaging
-- Video stream support
 
 The list is non-exhaustive, feel free to do anything you can think of!
 
