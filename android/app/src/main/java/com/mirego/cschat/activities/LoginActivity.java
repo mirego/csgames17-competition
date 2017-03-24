@@ -1,7 +1,9 @@
 package com.mirego.cschat.activities;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -12,6 +14,7 @@ import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.Prefs;
 import com.mirego.cschat.R;
 import com.mirego.cschat.controller.LoginController;
+import com.mirego.cschat.models.User;
 
 import javax.inject.Inject;
 
@@ -66,14 +69,15 @@ public class LoginActivity extends BaseActivity {
         loginController.login(etUsername.getText().toString(), etPassword.getText().toString())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
-                .subscribe(new Consumer<Boolean>() {
+                .subscribe(new Consumer<User>() {
                     @Override
-                    public void accept(@NonNull Boolean success) throws Exception {
-                        if (success) {
-                            // TODO
-                        } else {
-                            Snackbar.make(root, R.string.login_error, LENGTH_SHORT).show();
-                        }
+                    public void accept(@NonNull User user) throws Exception {
+                        startActivity(new Intent(LoginActivity.this, ConversationsActivity.class));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        Snackbar.make(root, R.string.login_error, LENGTH_SHORT).show();
                     }
                 });
     }
