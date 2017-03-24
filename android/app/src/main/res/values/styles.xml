@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/dustyOrange</item>
         <item name="colorControlNormal">@color/purpleyGrey</item>
+        <item name="colorControlHighlight">@color/pinkishGrey</item>
     </style>
 
     <style name="LoginField">
