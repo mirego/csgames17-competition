@@ -18,7 +18,7 @@ public class LoginController {
     }
 
     public Flowable<User> login(String username, String password) {
-        return chatService.login(new LoginRequest(username));
+        return chatService.login(new LoginRequest(username, password));
     }
 
     public void logout() {
