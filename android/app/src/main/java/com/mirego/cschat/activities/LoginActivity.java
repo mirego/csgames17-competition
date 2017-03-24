@@ -1,6 +1,5 @@
 package com.mirego.cschat.activities;
 
-<<<<<<< HEAD
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.Intent;
