@@ -1,14 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /*
  * GET all users
  */
 router.get('/', function(req, res) {
-  var db = req.db;
-  var collection = db.users;
-  var filter = req.query.name ? { "name": req.query.name } : {};
-  collection.find(filter, {}, function(e, docs) {
+  const userCollection = req.db.users;
+  const filter = req.query.name ? {
+    "name": req.query.name
+  } : {};
+  userCollection.find(filter, {}, function(e, docs) {
     res.json(docs);
   });
 });
@@ -17,10 +18,9 @@ router.get('/', function(req, res) {
  * GET a user
  */
 router.get('/:id', function(req, res) {
-  var db = req.db;
-  var userId = req.params.id;
-  var collection = db.users;
-  collection.findOne({
+  const userCollection = req.db.users;
+  const userId = req.params.id;
+  userCollection.findOne({
     "_id": userId
   }, {}, function(err, doc) {
     if (doc == null) {
@@ -33,42 +33,26 @@ router.get('/:id', function(req, res) {
 });
 
 /*
- * Update a user
- */
-router.put('/:id', function(req, res) {
-  var db = req.db;
-  var userId = req.params.id;
-  var collection = db.users;
-  collection.update({
-    "_id": userId
-  }, req.body, function(err, result) {
-    res.send(
-      (err === null) ? result : { msg: err }
-    );
-  });
-});
-
-/*
  * Create new user
  */
 router.post('/', function(req, res) {
-  var db = req.db;
-  var collection = db.users;
-  collection.insert(req.body, function(err, result) {
+  const userCollection = req.db.users;
+  userCollection.insert(req.body, function(err, result) {
     res.send(
-      (err === null) ? result : { msg: err }
+      (err === null) ? result : {
+        msg: err
+      }
     );
   });
 });
 
 /*
- * DELETE user
+ * Delete user
  */
 router.delete('/:id', function(req, res) {
-  var db = req.db;
-  var collection = db.users;
-  var userToDelete = req.params.id;
-  collection.remove({
+  const userCollection = req.db.users;
+  const userToDelete = req.params.id;
+  userCollection.remove({
     '_id': userToDelete
   }, function(err) {
     res.send((err === null) ? {

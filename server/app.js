@@ -1,77 +1,55 @@
-/***********
- * Imports *
- ***********/
- 
-// Web server
-var express = require('express');
+const express = require('express');
+const nedb = require('nedb');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const path = require('path');
 
-// Database
-var nedb = require('nedb');
 
-// Request helpers
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var favicon = require('serve-favicon');
-
-// Tools
-var logger = require('morgan');
-var path = require('path');
-
-/********************
- * Setup the server *
- ********************/
-
-// Setup routes
-var routes = require('./routes/index');
-var messages = require('./routes/messages');
-var users = require('./routes/users');
-
-// Setup express server
-var app = express();
+let app = express();
 app.set('port', process.env.PORT || 3000);
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Configure database collections
-var db = {};
-db.messages = new nedb({ filename: 'data/messages.db', autoload: true });
-db.users = new nedb({ filename: 'data/users.db', autoload: true });
+let db = {};
+db.users = new nedb({
+  filename: 'data/users.db',
+  autoload: true
+});
 
-// Forward the database to the router
+db.conversations = new nedb({
+  filename: 'data/conversations.db',
+  autoload: true
+});
+
 app.use(function(req, res, next) {
   req.db = db;
   next();
 });
 
-/************************
- * Configure the server *
- ************************/
+app.use(bodyParser.json({
+  limit: '10mb'
+}));
+app.use(bodyParser.urlencoded({
+  extended: false,
+  limit: '10mb'
+}));
 
-// Setup view engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-// Setup helpers
-app.use(bodyParser.json({ limit: '10mb' }));
-app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
-app.use(cookieParser());
-app.use(favicon(__dirname + '/public/favicon.ico'));
-
-// Setup tools
 app.use(logger('dev'));
 
-// Setup routes
-app.use('/', routes);
-app.use('/messages', messages);
-app.use('/users', users);
+let login = require('./routes/login');
+let users = require('./routes/users');
+let conversations = require('./routes/conversations');
+let messages = require('./routes/messages');
 
-/// Catch 404 errors
+app.use('/login', login);
+app.use('/users', users);
+conversations.use('/:conversationsId/messages', messages);
+users.use('/:userId/conversations', conversations);
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-/// Setup debugging (print stacktrace)
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
@@ -79,10 +57,6 @@ app.use(function(err, req, res, next) {
     error: err
   });
 });
-
-/********************
- * Start the server *
- ********************/
 
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on localhost:' + server.address().port);
