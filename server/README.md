@@ -37,7 +37,7 @@ The server should be accessible at [http://localhost:3000/]([http://localhost:30
 
 ## How it works
 
-The server works as a simple REST API. It should be fairly straightforward, but if you want to know more about it, you can read the **[API Documentation](https://github.com/mirego/csgames17-competition/blob/master/DOCUMENTATION.md)**.
+The server works as a simple REST API. It should be fairly straightforward, but if you want to know more about it, you can read the **[API Documentation](https://github.com/mirego/csgames17-competition/blob/master/server/DOCUMENTATION.md)**.
 
 There is no authentication or any data validation whatsoever, but this is enough to support the sample mobile applications.
 
