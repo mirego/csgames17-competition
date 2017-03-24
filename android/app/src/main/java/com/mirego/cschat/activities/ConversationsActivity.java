@@ -1,5 +1,6 @@
 package com.mirego.cschat.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -92,7 +93,9 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
         int id = item.getItemId();
         if (id == R.id.action_logout) {
             loginController.logout();
-            finish();
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);

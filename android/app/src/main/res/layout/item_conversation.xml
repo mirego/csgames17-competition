@@ -15,7 +15,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/tv_conversation_timestamp"
         fontPath="@string/font_lato_regular"
