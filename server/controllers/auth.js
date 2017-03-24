@@ -1,7 +1,5 @@
 
 exports.login = function (req, res) {
-  console.log(req);
-
   let filter = {
     'username': req.body.username.toLowerCase(),
     'password': req.body.password
