@@ -6,5 +6,12 @@ public class UserViewData {
 
     private User user;
 
+    public UserViewData(User user) {
+        this.user = user;
+    }
+
+    public String username() {
+        return user.getUsername();
+    }
 
 }
