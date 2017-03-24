@@ -145,12 +145,11 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
 
     @OnClick(R.id.btn_send_message)
     public void onSendMessageClicked() {
-        edtMessageInput.setText("");
-
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(edtMessageInput.getWindowToken(), 0);
 
         createMessage(edtMessageInput.getText().toString());
+        edtMessageInput.setText("");
     }
 
     private void createMessage(String message) {
