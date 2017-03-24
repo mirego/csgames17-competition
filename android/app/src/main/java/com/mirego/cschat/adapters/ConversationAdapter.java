@@ -1,5 +1,6 @@
 package com.mirego.cschat.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.mirego.cschat.R;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 import com.mirego.cschat.viewdatas.MessageViewData;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -19,9 +21,11 @@ import butterknife.ButterKnife;
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder> {
 
     private List<ConversationViewData> conversations;
-    private ConversationAdapterListener listener;
+    private final ConversationAdapterListener listener;
+    private final Context context;
 
-    public ConversationAdapter(ConversationAdapterListener listener) {
+    public ConversationAdapter(Context context, ConversationAdapterListener listener) {
+        this.context = context;
         this.listener = listener;
     }
 
@@ -44,6 +48,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             if (messageViewData != null) {
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
+                Picasso.with(context).load(messageViewData.avatarUrl());
             }
         }
 

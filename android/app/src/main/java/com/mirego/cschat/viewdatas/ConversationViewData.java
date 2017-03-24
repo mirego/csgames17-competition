@@ -9,22 +9,35 @@ import java.util.List;
 public class ConversationViewData {
 
     private final Conversation conversation;
-    private final List<UserViewData> userViewDatas;
+    private final List<User> users;
+    private final String currentUserId;
 
-    public ConversationViewData(Conversation conversation, List<User> users) {
+    public ConversationViewData(Conversation conversation, List<User> users, String currentUserId) {
         this.conversation = conversation;
-        userViewDatas = new ArrayList<>();
-        for (User user : users) {
-            userViewDatas.add(new UserViewData(user));
-        }
+        this.users = users;
+        this.currentUserId = currentUserId;
     }
 
     public MessageViewData lastMessage() {
-        return new MessageViewData(conversation.getLastMessage());
+        return new MessageViewData(conversation.getLastMessage(), userForUserId(conversation.getUsers()));
     }
 
-    public List<UserViewData> users() {
-        return userViewDatas;
+    private User userForUserId(List<String> userIds) {
+        for (String userId : userIds) {
+            if (!currentUserId.equals(userId)) {
+                return userForUserId(userId);
+            }
+        }
+        return null;
+    }
+
+    private User userForUserId(String userId) {
+        for (User user : users) {
+            if (user.getId().equals(userId)) {
+                return user;
+            }
+        }
+        return null;
     }
 
 }

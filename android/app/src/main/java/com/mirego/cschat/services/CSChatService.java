@@ -15,7 +15,7 @@ public interface CSChatService {
     @POST("login")
     Flowable<User> login(@Body LoginRequest loginRequest);
 
-    @GET("{userId}/conversations")
+    @GET("users/{userId}/conversations")
     Flowable<ConversationResponse> fetchConversations(@Path("userId") String userId);
 
 }
