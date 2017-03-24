@@ -35,14 +35,14 @@ app.use(bodyParser.urlencoded({
 app.use(logger('dev'));
 
 let login = require('./routes/login');
-let users = require('./routes/users');
+let usersRoute = require('./routes/users');
 let conversations = require('./routes/conversations');
 let messages = require('./routes/messages');
 
 app.use('/login', login);
-app.use('/users', users);
-conversations.use('/:conversationsId/messages', messages);
-users.use('/:userId/conversations', conversations);
+
+app.use('/users', usersRoute);
+usersRoute.use('/:user_id/conversations', conversations);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

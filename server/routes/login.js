@@ -11,7 +11,6 @@ router.post('/', function(req, res) {
       res.status(404) // HTTP status 404: NotFound
       res.send('Not found');
     } else {
-      console.log(doc);
       res.json(doc);
     }
   });
