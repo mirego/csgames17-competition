@@ -5,14 +5,14 @@ import java.util.List;
 public class Conversation {
 
     private Message lastMessage;
-    private List<String> userIds;
+    private List<String> users;
 
     public List<String> getUsers() {
-        return userIds;
+        return users;
     }
 
-    public void setUserIds(List<String> userIds) {
-        this.userIds = userIds;
+    public void setUsers(List<String> users) {
+        this.users = users;
     }
 
     public Message getLastMessage() {
