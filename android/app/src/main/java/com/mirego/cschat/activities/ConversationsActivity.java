@@ -37,7 +37,7 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
     }
 
     @OnClick(R.id.fab_add_conversation)
-    public void onNewConversationClicked() {
+    public void onAddConversationClicked() {
         //TODO:
     }
 
