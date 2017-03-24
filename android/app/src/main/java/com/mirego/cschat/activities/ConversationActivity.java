@@ -120,6 +120,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                     public void accept(@NonNull ConversationViewData conversationViewData) throws Exception {
                         if (conversationViewData != null && conversationViewData.messages() != null) {
                             messageAdapter.populateMessages(conversationViewData.messages());
+                            scrollToBottom();
                         }
                         if (conversationViewData != null && conversationViewData.conversationTitle() != null) {
                             toolbar.setTitle(conversationViewData.conversationTitle());
@@ -173,6 +174,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                     public void accept(@NonNull ConversationViewData conversationViewData) throws Exception {
                         if (conversationViewData != null && conversationViewData.messages() != null) {
                             messageAdapter.populateMessages(conversationViewData.messages());
+                            scrollToBottom();
                         }
                         pbLoading.setVisibility(View.GONE);
                     }
@@ -192,5 +194,9 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
     @Override
     public void onMessageClicked(MessageViewData messageViewData) {
         // todo
+    }
+
+    private void scrollToBottom(){
+        rvConversation.smoothScrollToPosition(messageAdapter.getItemCount());
     }
 }
