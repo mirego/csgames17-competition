@@ -5,8 +5,8 @@ target 'CSChat' do
 
   # 3rd party
   pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   pod 'SVProgressHUD'
-  pod 'SwiftyJSON'
   pod 'GestureRecognizerClosures'
   pod 'BRYParseKeyboardNotification'
 

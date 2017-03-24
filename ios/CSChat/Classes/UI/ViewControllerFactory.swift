@@ -10,6 +10,13 @@ import UIKit
 
 class ViewControllerFactory
 {
+    private let controllerFactory: ControllerFactory
+
+    init(controllerFactory: ControllerFactory)
+    {
+        self.controllerFactory = controllerFactory
+    }
+
     func homeViewController() -> UIViewController
     {
         return assign(HomeViewController())
@@ -17,7 +24,7 @@ class ViewControllerFactory
 
     func loginViewController() -> UIViewController
     {
-        return assign(LoginViewController())
+        return assign(LoginViewController(loginController: controllerFactory.loginController()))
     }
 }
 

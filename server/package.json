@@ -2,7 +2,7 @@
   "name": "csgames17-mobile-server",
   "version": "0.0.1",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "engines": {
     "node": ">= 7.6.0"
@@ -13,6 +13,7 @@
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "nedb": "^1.8.0",
+    "nodemon": "^1.11.0",
     "path": "^0.12.7"
   }
 }

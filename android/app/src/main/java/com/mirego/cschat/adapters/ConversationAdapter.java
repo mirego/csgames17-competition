@@ -8,15 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.mirego.cschat.R;
 import com.mirego.cschat.viewdatas.ConversationViewData;
 import com.mirego.cschat.viewdatas.MessageViewData;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder> {
 
@@ -46,12 +47,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             MessageViewData messageViewData = conversationViewData.lastMessage();
 
             if (messageViewData != null) {
+                holder.tvTitle.setText(messageViewData.username());
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
-                Picasso.with(context).load(messageViewData.avatarUrl());
+                Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
             }
         }
-
     }
 
     public void populateConversations(List<ConversationViewData> conversations) {
@@ -71,6 +72,9 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
         @BindView(R.id.iv_avatar)
         ImageView ivAvatar;
+
+        @BindView(R.id.tv_conversation_title)
+        TextView tvTitle;
 
         @BindView(R.id.tv_conversation_last_message)
         TextView tvLastMessage;

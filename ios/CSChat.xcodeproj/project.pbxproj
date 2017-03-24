@@ -14,8 +14,6 @@
 		E53776A01E848BC200E39B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E537769E1E848BC200E39B08 /* LaunchScreen.storyboard */; };
 		E53776B31E848D8800E39B08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E53776B21E848D8800E39B08 /* Localizable.strings */; };
 		E53776BA1E848E5800E39B08 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776B91E848E5800E39B08 /* Localization.swift */; };
-		E53776C11E8492D400E39B08 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C01E8492D400E39B08 /* Message.swift */; };
-		E53776C31E8492DA00E39B08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C21E8492DA00E39B08 /* User.swift */; };
 		E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C51E849C1400E39B08 /* BaseViewController.swift */; };
 		E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776C81E849C9800E39B08 /* Stylesheet.swift */; };
 		E53776CD1E849D6100E39B08 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776CC1E849D6100E39B08 /* ConversationViewController.swift */; };
@@ -31,6 +29,13 @@
 		E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776ED1E84BB8300E39B08 /* TextButton.swift */; };
 		E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */; };
 		E53776F21E84C33100E39B08 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776F11E84C33100E39B08 /* TextField.swift */; };
+		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
+		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
+		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
+		F18B84371E84D6FC007AA50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84321E84D6FC007AA50B /* User.swift */; };
+		F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84341E84D6FC007AA50B /* LoginService.swift */; };
+		F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */; };
+		F18B843B1E84D87B007AA50B /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B843A1E84D87B007AA50B /* ServiceFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +51,6 @@
 		E53776B21E848D8800E39B08 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E53776B41E848E1F00E39B08 /* CSChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		E53776B91E848E5800E39B08 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		E53776C01E8492D400E39B08 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		E53776C21E8492DA00E39B08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E53776C51E849C1400E39B08 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E53776C81E849C9800E39B08 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		E53776CC1E849D6100E39B08 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +67,13 @@
 		E53776ED1E84BB8300E39B08 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E53776F11E84C33100E39B08 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
+		F18B84321E84D6FC007AA50B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F18B84341E84D6FC007AA50B /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginServiceImpl.swift; sourceTree = "<group>"; };
+		F18B843A1E84D87B007AA50B /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +159,9 @@
 		E53776B01E848D4600E39B08 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				E53776BB1E848E7800E39B08 /* Model */,
+				F17FBC651E84CBCA00A0A56E /* Controller */,
+				F18B84311E84D6FC007AA50B /* Model */,
+				F18B84331E84D6FC007AA50B /* Service */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -175,15 +187,6 @@
 				E53776CE1E849DBA00E39B08 /* Utilities.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		E53776BB1E848E7800E39B08 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E53776C01E8492D400E39B08 /* Message.swift */,
-				E53776C21E8492DA00E39B08 /* User.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E53776C41E849C0900E39B08 /* Base */ = {
@@ -258,6 +261,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F17FBC651E84CBCA00A0A56E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F17FBC6A1E84CC1300A0A56E /* Impl */,
+				F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */,
+				F17FBC681E84CBFD00A0A56E /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F17FBC6A1E84CC1300A0A56E /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		F18B84311E84D6FC007AA50B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F18B84321E84D6FC007AA50B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F18B84331E84D6FC007AA50B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F18B84351E84D6FC007AA50B /* Impl */,
+				F18B84341E84D6FC007AA50B /* LoginService.swift */,
+				F18B843A1E84D87B007AA50B /* ServiceFactory.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F18B84351E84D6FC007AA50B /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +340,7 @@
 				TargetAttributes = {
 					E53776911E848BC200E39B08 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4Q596JWQC5;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -385,23 +433,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */,
+				F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */,
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
 				E53776981E848BC200E39B08 /* HomeViewController.swift in Sources */,
-				E53776C11E8492D400E39B08 /* Message.swift in Sources */,
+				F18B843B1E84D87B007AA50B /* ServiceFactory.swift in Sources */,
 				E53776E71E84B4D500E39B08 /* GenericButton.swift in Sources */,
 				E53776CD1E849D6100E39B08 /* ConversationViewController.swift in Sources */,
 				E53776DE1E84A3A600E39B08 /* HomeView.swift in Sources */,
 				E53776F21E84C33100E39B08 /* TextField.swift in Sources */,
 				E53776961E848BC200E39B08 /* AppDelegate.swift in Sources */,
-				E53776C31E8492DA00E39B08 /* User.swift in Sources */,
+				F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */,
 				E53776EC1E84BACF00E39B08 /* LoginView.swift in Sources */,
+				F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */,
 				E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */,
 				E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */,
 				E53776BA1E848E5800E39B08 /* Localization.swift in Sources */,
+				F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */,
 				E53776EA1E84BA1500E39B08 /* LoginViewController.swift in Sources */,
 				E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */,
 				E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */,
 				E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */,
+				F18B84371E84D6FC007AA50B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				INFOPLIST_FILE = "CSChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -536,6 +590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				INFOPLIST_FILE = "CSChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

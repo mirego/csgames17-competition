@@ -10,8 +10,22 @@ import UIKit
 
 class LoginViewController: BaseViewController
 {
-    private var mainView: LoginView {
+    fileprivate var mainView: LoginView {
         return self.view as! LoginView
+    }
+
+    fileprivate let loginController: LoginController
+
+    init(loginController: LoginController)
+    {
+        self.loginController = loginController
+
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func loadView()
@@ -20,22 +34,43 @@ class LoginViewController: BaseViewController
         mainView.delegate = self
     }
 
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        mainView.focusUsername()
+    }
+
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-        mainView.endEditing(true)
+        //mainView.focusUsername()
+    }
+
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        //mainView.focusUsername()
     }
 }
 
 extension LoginViewController: LoginViewDelegate
 {
-    func didTapContinue()
+    func didTapContinue(username: String, password: String)
     {
+        mainView.showLoading(true)
 
+        loginController.login(username: username, password: password) { [weak self] (success) -> (Void) in
+            if success {
+                self?.mainView.lockKeyboardOffset()
+            } else {
+                self?.mainView.showLoading(false)
+            }
+        }
     }
 
     func didTapBack()
     {
+        mainView.lockKeyboardOffset()
         _ = navigationController?.popViewController(animated: true)
     }
 }

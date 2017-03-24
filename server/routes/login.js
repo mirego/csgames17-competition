@@ -1,17 +1,25 @@
 const express = require('express');
-const router = express.Router();
 
+const router = express.Router({
+  mergeParams: true
+});
+
+/*
+ * Login with password
+ */
 router.post('/', function(req, res) {
-  let collection = req.db.users;
-  let username = req.body.username.toLowerCase();
-  collection.findOne({
-    "username": username
-  }, {}, function(err, doc) {
-    if (doc == null) {
-      res.status(404) // HTTP status 404: NotFound
-      res.send('Not found');
+  let filter = {
+    'username': req.body.username.toLowerCase(),
+    'password': req.body.password
+  };
+  let projection = {
+    password: 0
+  };
+  req.db.users.findOne(filter, projection, function(e, user) {
+    if (user) {
+      res.json(user);
     } else {
-      res.json(doc);
+      res.status(401).send('Username or password invalid');
     }
   });
 });

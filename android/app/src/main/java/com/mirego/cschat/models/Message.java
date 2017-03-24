@@ -5,15 +5,15 @@ import java.util.Date;
 public class Message {
 
     private String message;
-    private Date timestamps;
+    private Date timestamp;
     private String userId;
 
-    public Date getTimestamps() {
-        return timestamps;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
-    public void setTimestamps(Date timestamps) {
-        this.timestamps = timestamps;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getUserId() {
