@@ -9,10 +9,10 @@
 import UIKit
 import ObjectMapper
 
-class User: Mappable
+class User: Mappable, Equatable
 {
-    var id: String? = nil
-    var username: String? = nil
+    var id: String! = nil
+    var username: String! = nil
     var url: String? = nil
 
     required init?(map: Map)
@@ -24,5 +24,10 @@ class User: Mappable
         id <- map["_id"]
         username <- map["username"]
         url <- map["url"]
+    }
+
+    public static func ==(lhs: User, rhs: User) -> Bool
+    {
+        return lhs.id == rhs.id
     }
 }

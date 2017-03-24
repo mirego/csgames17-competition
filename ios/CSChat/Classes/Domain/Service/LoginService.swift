@@ -10,5 +10,7 @@ import UIKit
 
 protocol LoginService
 {
+    var loggedUser: User? { get }
+
     func login(username: String, password: String, completion: @escaping (_ user: User?) -> (Void))
 }

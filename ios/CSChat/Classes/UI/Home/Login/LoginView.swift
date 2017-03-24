@@ -40,12 +40,14 @@ class LoginView: UIView
         loginLabel.setProperties(text: LocalizedString("LOGIN_TITLE"), font: .latoMedium(30), textColor: .black, fit: true)
         addSubview(loginLabel)
 
+        username.textField.text = "horace"
         username.textField.delegate = self
         username.textField.autocapitalizationType = .none
         username.textField.autocorrectionType = .no
         username.textField.returnKeyType = .next
         addSubview(username)
 
+        password.textField.text = "draught146"
         password.textField.delegate = self
         password.textField.returnKeyType = .go
         password.textField.isSecureTextEntry = true

@@ -40,6 +40,13 @@
 		F18B84491E859A65007AA50B /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84481E859A65007AA50B /* ConversationsController.swift */; };
 		F18B844E1E859B82007AA50B /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B844D1E859B82007AA50B /* ConversationViewModel.swift */; };
 		F18B84501E859BD5007AA50B /* ConversationsControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B844F1E859BD5007AA50B /* ConversationsControllerImpl.swift */; };
+		F18B84521E859F1B007AA50B /* ConversationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84511E859F1B007AA50B /* ConversationsService.swift */; };
+		F18B84541E859FE4007AA50B /* ConversationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84531E859FE4007AA50B /* ConversationResponse.swift */; };
+		F18B84561E85A0AF007AA50B /* ConversationSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84551E85A0AF007AA50B /* ConversationSummary.swift */; };
+		F18B84581E85A0FB007AA50B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B84571E85A0FB007AA50B /* Message.swift */; };
+		F18B845B1E85A32B007AA50B /* ConversationViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B845A1E85A32B007AA50B /* ConversationViewModelImpl.swift */; };
+		F18B845D1E85A73F007AA50B /* ConversationsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B845C1E85A73F007AA50B /* ConversationsServiceImpl.swift */; };
+		F18B845F1E85A76D007AA50B /* HttpConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B845E1E85A76D007AA50B /* HttpConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +89,13 @@
 		F18B84481E859A65007AA50B /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		F18B844D1E859B82007AA50B /* ConversationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		F18B844F1E859BD5007AA50B /* ConversationsControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsControllerImpl.swift; sourceTree = "<group>"; };
+		F18B84511E859F1B007AA50B /* ConversationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsService.swift; sourceTree = "<group>"; };
+		F18B84531E859FE4007AA50B /* ConversationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationResponse.swift; sourceTree = "<group>"; };
+		F18B84551E85A0AF007AA50B /* ConversationSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationSummary.swift; sourceTree = "<group>"; };
+		F18B84571E85A0FB007AA50B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F18B845A1E85A32B007AA50B /* ConversationViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModelImpl.swift; sourceTree = "<group>"; };
+		F18B845C1E85A73F007AA50B /* ConversationsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsServiceImpl.swift; sourceTree = "<group>"; };
+		F18B845E1E85A76D007AA50B /* HttpConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +299,10 @@
 		F18B84311E84D6FC007AA50B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F18B84531E859FE4007AA50B /* ConversationResponse.swift */,
 				F18B84321E84D6FC007AA50B /* User.swift */,
+				F18B84551E85A0AF007AA50B /* ConversationSummary.swift */,
+				F18B84571E85A0FB007AA50B /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				F18B84351E84D6FC007AA50B /* Impl */,
+				F18B84511E859F1B007AA50B /* ConversationsService.swift */,
 				F18B84341E84D6FC007AA50B /* LoginService.swift */,
 				F18B843A1E84D87B007AA50B /* ServiceFactory.swift */,
 			);
@@ -303,6 +321,8 @@
 		F18B84351E84D6FC007AA50B /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				F18B845C1E85A73F007AA50B /* ConversationsServiceImpl.swift */,
+				F18B845E1E85A76D007AA50B /* HttpConst.swift */,
 				F18B84361E84D6FC007AA50B /* LoginServiceImpl.swift */,
 			);
 			path = Impl;
@@ -320,9 +340,18 @@
 		F18B844C1E859B6C007AA50B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F18B84591E85A318007AA50B /* Impl */,
 				F18B844D1E859B82007AA50B /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F18B84591E85A318007AA50B /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F18B845A1E85A32B007AA50B /* ConversationViewModelImpl.swift */,
+			);
+			path = Impl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,12 +482,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18B84521E859F1B007AA50B /* ConversationsService.swift in Sources */,
+				F18B84541E859FE4007AA50B /* ConversationResponse.swift in Sources */,
 				F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */,
 				F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */,
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
+				F18B84561E85A0AF007AA50B /* ConversationSummary.swift in Sources */,
 				E53776981E848BC200E39B08 /* HomeViewController.swift in Sources */,
+				F18B845B1E85A32B007AA50B /* ConversationViewModelImpl.swift in Sources */,
 				F18B843B1E84D87B007AA50B /* ServiceFactory.swift in Sources */,
 				F18B844E1E859B82007AA50B /* ConversationViewModel.swift in Sources */,
+				F18B845D1E85A73F007AA50B /* ConversationsServiceImpl.swift in Sources */,
 				E53776E71E84B4D500E39B08 /* GenericButton.swift in Sources */,
 				E53776DE1E84A3A600E39B08 /* HomeView.swift in Sources */,
 				E53776F21E84C33100E39B08 /* TextField.swift in Sources */,
@@ -471,12 +505,14 @@
 				E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */,
 				E53776BA1E848E5800E39B08 /* Localization.swift in Sources */,
 				F18B84461E8596FE007AA50B /* ConversationsView.swift in Sources */,
+				F18B845F1E85A76D007AA50B /* HttpConst.swift in Sources */,
 				F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */,
 				F18B84471E8596FE007AA50B /* ConversationsViewController.swift in Sources */,
 				E53776EA1E84BA1500E39B08 /* LoginViewController.swift in Sources */,
 				E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */,
 				F18B84501E859BD5007AA50B /* ConversationsControllerImpl.swift in Sources */,
 				E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */,
+				F18B84581E85A0FB007AA50B /* Message.swift in Sources */,
 				E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */,
 				F18B84371E84D6FC007AA50B /* User.swift in Sources */,
 			);

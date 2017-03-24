@@ -32,4 +32,23 @@ class ConversationsViewController: BaseViewController
     {
         view = ConversationsView()
     }
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        conversationsController.allConversations { (conversations) -> (Void) in
+            if let conversations = conversations {
+                print("Conversation received: \(conversations.count)")
+                conversations.forEach {
+                    print("\($0.name ?? "")")
+                    print("\($0.message ?? "")")
+                    print("\($0.date ?? "")")
+                    print("\($0.avatarUrl ?? "")")
+                }
+            } else {
+                print("Error!!")
+            }
+        }
+    }
 }

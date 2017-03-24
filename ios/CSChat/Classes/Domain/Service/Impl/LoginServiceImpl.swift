@@ -12,16 +12,17 @@ import AlamofireObjectMapper
 
 class LoginServiceImpl: LoginService
 {
-    private static let baseUrl = "http://localhost:3000/"
+    var loggedUser: User?
 
     func login(username: String, password: String, completion: @escaping (_ user: User?) -> (Void))
     {
-        let url = LoginServiceImpl.baseUrl + "login"
+        let url = HttpConst.baseUrl + "login"
         let parameters: [String: Any] = ["username": username, "password": password]
 
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseObject { (response: DataResponse<User>) in
             if let statusCode = response.response?.statusCode {
                 if (statusCode >= 200 && statusCode < 300) {
+                    self.loggedUser = response.result.value
                     completion(response.result.value)
                 } else {
                     completion(nil)

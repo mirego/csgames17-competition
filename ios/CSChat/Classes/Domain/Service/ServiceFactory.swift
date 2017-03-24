@@ -11,9 +11,15 @@ import UIKit
 class ServiceFactory
 {
     let uniqueloginService = LoginServiceImpl()
+    let uniqueConversationsService = ConversationsServiceImpl()
 
     func loginService() -> LoginService
     {
         return uniqueloginService
+    }
+
+    func conversationsService() -> ConversationsService
+    {
+        return uniqueConversationsService
     }
 }
