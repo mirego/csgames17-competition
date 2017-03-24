@@ -27,6 +27,17 @@
         android:paddingBottom="48dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        android:layout_marginBottom="44dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/dustyOrange" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -38,13 +49,13 @@
             android:id="@+id/edt_message_input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:backgroundTint="@color/dustyOrange"
-            android:textColorHint="@color/purpleyGrey"
-            android:textColor="@color/purpleyGrey"
             android:hint="@string/send_message_hint"
-            android:layout_marginLeft="16dp"
-            android:paddingRight="8dp" />
+            android:paddingRight="8dp"
+            android:textColor="@color/purpleyGrey"
+            android:textColorHint="@color/purpleyGrey" />
 
         <Button
             android:id="@+id/btn_send_message"

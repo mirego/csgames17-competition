@@ -10,9 +10,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
@@ -51,6 +53,9 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
 
     @BindView(R.id.edt_message_input)
     EditText edtMessageInput;
+
+    @BindView(R.id.pb_loading)
+    ProgressBar pbLoading;
 
     private MessageAdapter messageAdapter;
 
@@ -106,6 +111,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
     }
 
     private void fetchConversation() {
+        pbLoading.setVisibility(View.VISIBLE);
         controller.getConversation(getConversationId())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
@@ -115,11 +121,13 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                         if (conversationViewData != null && conversationViewData.messages() != null) {
                             messageAdapter.populateMessages(conversationViewData.messages());
                         }
+                        pbLoading.setVisibility(View.GONE);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
                         Snackbar.make(root, R.string.network_error, Snackbar.LENGTH_SHORT).show();
+                        pbLoading.setVisibility(View.GONE);
                     }
                 });
     }
@@ -153,6 +161,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
     }
 
     private void createMessage(String message) {
+        pbLoading.setVisibility(View.VISIBLE);
         controller.createMessage(getConversationId(), message)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
@@ -162,11 +171,13 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
                         if (conversationViewData != null && conversationViewData.messages() != null) {
                             messageAdapter.populateMessages(conversationViewData.messages());
                         }
+                        pbLoading.setVisibility(View.GONE);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
                         Snackbar.make(root, R.string.network_error, Snackbar.LENGTH_SHORT).show();
+                        pbLoading.setVisibility(View.GONE);
                     }
                 });
     }
