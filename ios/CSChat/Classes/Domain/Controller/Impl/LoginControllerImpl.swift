@@ -10,8 +10,17 @@ import UIKit
 
 class LoginControllerImpl: LoginController
 {
+    private let loginService: LoginService
+
+    init(loginService: LoginService)
+    {
+        self.loginService = loginService
+    }
+
     func login(username: String, password: String, completion: @escaping (_ success: Bool) -> (Void))
     {
-        print("Do login ....")
+        loginService.login(username: username, password: password) { (user) -> (Void) in
+            completion(user != nil)
+        }
     }
 }

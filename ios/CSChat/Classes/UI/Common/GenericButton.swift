@@ -14,11 +14,34 @@ class GenericButton: UIButton
 
     private let label = UILabel()
 
+    private lazy var loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+
     override var isHighlighted: Bool {
         didSet {
             highlightOverlay.alpha = isHighlighted ? 1 : 0
         }
     }
+
+    var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                if loadingIndicator.superview == nil {
+                    addSubview(loadingIndicator)
+                    loadingIndicator.setPosition(.positionCenters)
+                }
+                loadingIndicator.startAnimating()
+                loadingIndicator.alpha = 1
+                label.alpha = 0
+                isEnabled = false
+            } else {
+                loadingIndicator.stopAnimating()
+                loadingIndicator.alpha = 0
+                label.alpha = 1
+                isEnabled = true
+            }
+        }
+    }
+
     init(title: String, backgroundColor: UIColor)
     {
         super.init(frame: .zero)

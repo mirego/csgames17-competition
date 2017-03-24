@@ -109,6 +109,14 @@ class LoginView: UIView
     {
         keyboardOffsetLocked = true
     }
+
+    func showLoading(_ loading: Bool)
+    {
+        continueButton.isLoading = loading
+        username.isUserInteractionEnabled = !loading
+        password.isUserInteractionEnabled = !loading
+        endEditing(true)
+    }
 }
 
 extension LoginView: UITextFieldDelegate

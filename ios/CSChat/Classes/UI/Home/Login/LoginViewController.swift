@@ -57,8 +57,14 @@ extension LoginViewController: LoginViewDelegate
 {
     func didTapContinue(username: String, password: String)
     {
+        mainView.showLoading(true)
+
         loginController.login(username: username, password: password) { [weak self] (success) -> (Void) in
-            self?.mainView.lockKeyboardOffset()
+            if success {
+                self?.mainView.lockKeyboardOffset()
+            } else {
+                self?.mainView.showLoading(false)
+            }
         }
     }
 

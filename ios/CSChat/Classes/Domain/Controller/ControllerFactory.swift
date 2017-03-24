@@ -10,8 +10,15 @@ import UIKit
 
 class ControllerFactory
 {
+    private let serviceFactory: ServiceFactory
+
+    init(serviceFactory: ServiceFactory)
+    {
+        self.serviceFactory = serviceFactory
+    }
+
     func loginController() -> LoginController
     {
-        return LoginControllerImpl()
+        return LoginControllerImpl(loginService: serviceFactory.loginService())
     }
 }
