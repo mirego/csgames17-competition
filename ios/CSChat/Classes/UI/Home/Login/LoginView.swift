@@ -11,7 +11,7 @@ import BRYParseKeyboardNotification
 
 protocol LoginViewDelegate: class
 {
-    func didTapContinue()
+    func didTapContinue(username: String, password: String)
     func didTapBack()
 }
 
@@ -28,6 +28,7 @@ class LoginView: UIView
     private let backButton = TextButton(title: LocalizedString("LOGIN_BACK_BUTTON"))
 
     fileprivate var keyboardHeight = 0.f
+    fileprivate var keyboardOffsetLocked = false
 
     init()
     {
@@ -50,7 +51,7 @@ class LoginView: UIView
         addSubview(password)
 
         _ = continueButton.on(.touchUpInside) { [weak self] (_) in
-            self?.delegate?.didTapContinue()
+            self?.delegate?.didTapContinue(username: self?.username.textField.text ?? "", password: self?.password.textField.text ?? "")
         }
         addSubview(continueButton)
 
@@ -88,14 +89,24 @@ class LoginView: UIView
 
         password.setRelativePosition(.relativePositionUnderCentered, toView: username, margins: .top(5), size: controlSize)
 
-        backButton.setPosition(.positionBottomHCenter, margins: .bottom(Stylesheet.margin + keyboardHeight), size: controlSize)
+        backButton.setPosition(.positionBottomHCenter, margins: .bottom(keyboardHeight + 5), size: controlSize)
 
-        continueButton.setRelativePosition(.relativePositionAboveCentered, toView: backButton, size: controlSize)
+        continueButton.setRelativePosition(.relativePositionAboveCentered, toView: backButton, margins: .bottom(Stylesheet.margin - 5), size: controlSize)
+    }
+
+    func focusUsername()
+    {
+        username.textField.becomeFirstResponder()
     }
 
     private func dismissKeyboard()
     {
         endEditing(true)
+    }
+
+    func lockKeyboardOffset()
+    {
+        keyboardOffsetLocked = true
     }
 }
 
@@ -106,7 +117,7 @@ extension LoginView: UITextFieldDelegate
         if textField == username.textField {
             password.textField.becomeFirstResponder()
         } else {
-            delegate?.didTapContinue()
+            delegate?.didTapContinue(username: username.textField.text ?? "", password: password.textField.text ?? "")
         }
 
         return true
@@ -117,6 +128,8 @@ extension LoginView
 {
     func keyboardWillShow(_ notification: Notification)
     {
+        guard !keyboardOffsetLocked else { return }
+
         BRYParseKeyboardNotification(notification) { [weak self] (duration, keyboardHeight, options) -> Void in
             self?.keyboardHeight = keyboardHeight
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: { 
@@ -128,6 +141,8 @@ extension LoginView
 
     func keyboardWillHide(_ notification: Notification)
     {
+        guard !keyboardOffsetLocked else { return }
+
         BRYParseKeyboardNotification(notification) { [weak self] (duration, _, options) -> Void in
             self?.keyboardHeight = 0
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {

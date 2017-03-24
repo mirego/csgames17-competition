@@ -31,6 +31,9 @@
 		E53776EE1E84BB8300E39B08 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776ED1E84BB8300E39B08 /* TextButton.swift */; };
 		E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */; };
 		E53776F21E84C33100E39B08 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776F11E84C33100E39B08 /* TextField.swift */; };
+		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
+		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
+		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		E53776ED1E84BB8300E39B08 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E53776F11E84C33100E39B08 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 		E53776B01E848D4600E39B08 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F17FBC651E84CBCA00A0A56E /* Controller */,
 				E53776BB1E848E7800E39B08 /* Model */,
 			);
 			path = Domain;
@@ -258,6 +265,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F17FBC651E84CBCA00A0A56E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F17FBC6A1E84CC1300A0A56E /* Impl */,
+				F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */,
+				F17FBC681E84CBFD00A0A56E /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F17FBC6A1E84CC1300A0A56E /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +318,7 @@
 				TargetAttributes = {
 					E53776911E848BC200E39B08 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4Q596JWQC5;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -385,6 +411,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */,
+				F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */,
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
 				E53776981E848BC200E39B08 /* HomeViewController.swift in Sources */,
 				E53776C11E8492D400E39B08 /* Message.swift in Sources */,
@@ -398,6 +426,7 @@
 				E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */,
 				E53776CF1E849DBA00E39B08 /* Utilities.swift in Sources */,
 				E53776BA1E848E5800E39B08 /* Localization.swift in Sources */,
+				F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */,
 				E53776EA1E84BA1500E39B08 /* LoginViewController.swift in Sources */,
 				E53776F01E84C02000E39B08 /* ViewControllerFactory.swift in Sources */,
 				E53776C61E849C1400E39B08 /* BaseViewController.swift in Sources */,
@@ -519,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				INFOPLIST_FILE = "CSChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -536,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				INFOPLIST_FILE = "CSChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

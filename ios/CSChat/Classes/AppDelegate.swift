@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
 
-    private let viewControllerFactory = ViewControllerFactory()
+    private let controllerFactory = ControllerFactory()
+    private var viewControllerFactory: ViewControllerFactory!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
+        viewControllerFactory = ViewControllerFactory(controllerFactory: controllerFactory)
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
 
         window = UIWindow(frame: UIScreen.main.bounds)
