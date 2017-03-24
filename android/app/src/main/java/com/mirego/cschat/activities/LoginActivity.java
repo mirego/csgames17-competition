@@ -48,7 +48,7 @@ public class LoginActivity extends BaseActivity {
         ((CSChatApplication) getApplication()).component().inject(this);
 
     }
-    
+
     @OnClick(R.id.btn_login_submit)
     void onLoginClicked() {
         loginController.login(etUsername.getText().toString(), etPassword.getText().toString())
