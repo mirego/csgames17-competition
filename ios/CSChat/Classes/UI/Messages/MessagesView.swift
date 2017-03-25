@@ -18,9 +18,13 @@ class MessagesView: UIView
 {
     weak var delegate: MessagesViewDelegate?
 
+    fileprivate let tableView = UITableView()
     private let sendMessageBarView = SendMessageBarView()
 
     fileprivate var keyboardHeight = 0.f
+
+    fileprivate var messages: [MessageViewModel] = []
+    fileprivate let cellForHeight = MessageTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: MessageTableViewCell.reuseIdentifier)
 
     init()
     {
@@ -31,6 +35,14 @@ class MessagesView: UIView
         _ = sendMessageBarView.sendButton.on(.touchUpInside) { [weak self] (_) in
             self?.sendMessage()
         }
+
+        tableView.contentInset = .top(Stylesheet.spacing / 2)
+        tableView.separatorStyle = .none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.reuseIdentifier)
+        addSubview(tableView)
 
         sendMessageBarView.textField.delegate = self
         addSubview(sendMessageBarView)
@@ -49,6 +61,8 @@ class MessagesView: UIView
         super.layoutSubviews()
 
         sendMessageBarView.setPosition(.positionBottomLeft, margins: .bottom(keyboardHeight), size: CGSize(width: width, height: sendMessageBarView.height))
+
+        tableView.setPosition(.positionTopLeft, margins: .top(0), size: CGSize(width: width, height: height - sendMessageBarView.height))
     }
 
     fileprivate func sendMessage()
@@ -56,6 +70,12 @@ class MessagesView: UIView
         guard let message = sendMessageBarView.textField.text else { return }
 
         delegate?.sendMessage(message)
+    }
+
+    func configure(messages: [MessageViewModel])
+    {
+        self.messages = messages
+        tableView.reloadData()
     }
 
     func showLoading(_ loading: Bool)
@@ -86,6 +106,7 @@ extension MessagesView
     {
         BRYParseKeyboardNotification(notification) { [weak self] (duration, keyboardHeight, options) -> Void in
             self?.keyboardHeight = keyboardHeight
+            self?.tableView.contentInset = .margins(top: Stylesheet.spacing / 2, bottom: keyboardHeight)
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
                 self?.layoutSubviews()
             }, completion: nil)
@@ -96,9 +117,39 @@ extension MessagesView
     {
         BRYParseKeyboardNotification(notification) { [weak self] (duration, _, options) -> Void in
             self?.keyboardHeight = 0
+            self?.tableView.contentInset = .top(Stylesheet.spacing / 2)
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
                 self?.layoutSubviews()
             }, completion: nil)
         }
+    }
+}
+
+extension MessagesView: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return cellForHeight.height(forMessage: messages[indexPath.row], inWidth: width)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        print("\(scrollView.contentOffset.y)")
+    }
+}
+
+extension MessagesView: UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return messages.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let messageCell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.reuseIdentifier, for: indexPath) as! MessageTableViewCell
+        messageCell.configure(message: messages[indexPath.row])
+
+        return messageCell
     }
 }

@@ -27,7 +27,8 @@ class ConversationViewModelImpl: ConversationViewModel
     }
 
     let conversationSummary: ConversationSummary
-    let dateFormatter: MessageDateFormatter
+
+    private let dateFormatter: MessageDateFormatter
 
     private let user: User?
 

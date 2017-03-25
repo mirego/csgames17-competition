@@ -30,6 +30,7 @@ class ConversationsView: UIView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.rowHeight = 80
         tableView.register(ConversationTableViewCell.self, forCellReuseIdentifier: ConversationTableViewCell.reuseIdentifier)
         addSubview(tableView)
     }
@@ -73,11 +74,6 @@ extension ConversationsView: UITableViewDataSource
 
 extension ConversationsView: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 80
-    }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: false)

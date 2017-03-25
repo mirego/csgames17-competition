@@ -56,7 +56,7 @@ class ConversationsControllerImpl: ConversationsController
                 var messageViewDatas: [MessageViewModel] = []
                 if let messages = conversation.messages {
                     messages.forEach {
-                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users))
+                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users, dateFormatter: self.dateFormatter))
                     }
                 }
                 completion(messageViewDatas)
@@ -78,7 +78,7 @@ class ConversationsControllerImpl: ConversationsController
                 var messageViewDatas: [MessageViewModel] = []
                 if let messages = conversation.messages {
                     messages.forEach {
-                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users))
+                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users, dateFormatter: self.dateFormatter))
                     }
                 }
                 completion(messageViewDatas)

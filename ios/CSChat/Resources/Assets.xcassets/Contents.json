@@ -1,6 +1,13 @@
 {
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  }
+  "users": ["L0Fjxv4qrNCcPkZC", "PULAnPUUH06LcCzH"],
+  "messages": [{
+    "userId": "PULAnPUUH06LcCzH",
+    "message": "You have no business being here",
+    "timestamp": "2017-03-24T01:26:44.452Z"
+  }, {
+    "userId": "L0Fjxv4qrNCcPkZC",
+    "message": "Allo",
+    "timestamp": "2017-03-25T14:01:31.074Z"
+  }],
+  "_id": "pRfWn0jkxjQC2OEq"
 }

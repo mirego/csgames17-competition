@@ -42,6 +42,7 @@
 		F16BFAD41E85BF270045120D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD31E85BF270045120D /* Conversation.swift */; };
 		F16BFAD61E85C6DE0045120D /* MessageViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */; };
 		F16BFAD91E85DBC30045120D /* SendMessageBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */; };
+		F16BFADB1E86A94E0045120D /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFADA1E86A94E0045120D /* MessageTableViewCell.swift */; };
 		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
 		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
 		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
@@ -105,6 +106,7 @@
 		F16BFAD31E85BF270045120D /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModelImpl.swift; sourceTree = "<group>"; };
 		F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageBarView.swift; sourceTree = "<group>"; };
+		F16BFADA1E86A94E0045120D /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		F16BFAD71E85DB500045120D /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				F16BFADA1E86A94E0045120D /* MessageTableViewCell.swift */,
 				F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */,
 			);
 			path = Subviews;
@@ -585,6 +588,7 @@
 				F16BFAC71E85B1D80045120D /* TransitionViewController.swift in Sources */,
 				E53776EC1E84BACF00E39B08 /* LoginView.swift in Sources */,
 				F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */,
+				F16BFADB1E86A94E0045120D /* MessageTableViewCell.swift in Sources */,
 				F16BFACC1E85BA6A0045120D /* MessagesViewController.swift in Sources */,
 				E51B061F1E8695FD00FFF165 /* MessageDateFormatter.swift in Sources */,
 				E53776C91E849C9800E39B08 /* Stylesheet.swift in Sources */,

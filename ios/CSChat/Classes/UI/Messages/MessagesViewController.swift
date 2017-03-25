@@ -50,9 +50,9 @@ class MessagesViewController: BaseViewController
     fileprivate func processMessage(_ messages: [MessageViewModel]?)
     {
         if let messages = messages {
-            print("messages received: \(messages.count)")
+            mainView.configure(messages: messages)
         } else {
-            print("nil messages received!!")
+            mainView.configure(messages: [])
         }
     }
 }

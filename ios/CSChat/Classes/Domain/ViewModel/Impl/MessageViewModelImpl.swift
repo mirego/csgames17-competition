@@ -19,7 +19,7 @@ class MessageViewModelImpl: MessageViewModel
     }
 
     var date: String? {
-        return messageObject.timestamp
+        return dateFormatter.mediumFormat(dateString: messageObject.timestamp)
     }
 
     var avatarUrl: String? {
@@ -27,11 +27,13 @@ class MessageViewModelImpl: MessageViewModel
     }
 
     private let messageObject: Message
+    private let dateFormatter: MessageDateFormatter
     private let user: User?
 
-    init(message: Message, users: [User])
+    init(message: Message, users: [User], dateFormatter: MessageDateFormatter)
     {
         self.messageObject = message
-        self.user = (users.filter { $0.id != message.userId }).first
+        self.dateFormatter = dateFormatter
+        self.user = (users.filter { $0.id == message.userId }).first
     }
 }
