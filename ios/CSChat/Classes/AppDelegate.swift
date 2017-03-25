@@ -13,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
 
-    fileprivate var transitionViewController: TransitionViewController!
-
     private let serviceFactory = ServiceFactory()
     private var controllerFactory: ControllerFactory!
     private var viewControllerFactory: ViewControllerFactory!
@@ -30,21 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         loginController = controllerFactory.loginController()
 
-        transitionViewController = TransitionViewController(viewController: UINavigationController(rootViewController: viewControllerFactory.homeViewController()))
-
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.tintColor = .white
         window!.backgroundColor = UIColor.black
-        window!.rootViewController = transitionViewController
+        window!.rootViewController = UINavigationController(rootViewController: viewControllerFactory.homeViewController())
         window!.makeKeyAndVisible()
 
         _ = loginController?.isLoggedObservable.register(callback: { (_, isLoggedIn) in
             if isLoggedIn && !self.isLoggedIn {
                 self.isLoggedIn = true
-                self.transitionViewController.transitionToViewController(NavigationController(rootViewController: self.viewControllerFactory.conversationsViewController()))
+                let conversationViewController = NavigationController(rootViewController: self.viewControllerFactory.conversationsViewController())
+                conversationViewController.modalTransitionStyle = .crossDissolve
+                self.window!.rootViewController?.present(conversationViewController, animated: true) {
+                    _ = (self.window!.rootViewController as? UINavigationController)?.popToRootViewController(animated: false)
+                }
             } else if self.isLoggedIn {
                 self.isLoggedIn = false
-                self.transitionViewController.transitionToViewController(UINavigationController(rootViewController: self.viewControllerFactory.homeViewController()))
+                self.window!.rootViewController?.dismiss(animated: true, completion: nil)
             }
         })
         return true

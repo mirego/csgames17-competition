@@ -26,9 +26,6 @@ class MessageTableViewCell: UITableViewCell
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = UIColor.purpleyGrey.withAlphaComponent(0.25)
-
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = profileImageWidth / 2
         profileImageView.size = CGSize(width: profileImageWidth, height: profileImageWidth)

@@ -32,8 +32,6 @@
 		E53776F21E84C33100E39B08 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53776F11E84C33100E39B08 /* TextField.swift */; };
 		E5BABD6B1E85BE19002747B8 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BABD6A1E85BE19002747B8 /* ConversationTableViewCell.swift */; };
 		F16BFAC21E85AEEE0045120D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC11E85AEEE0045120D /* Observable.swift */; };
-		F16BFAC61E85B1D80045120D /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC41E85B1D80045120D /* TransitionView.swift */; };
-		F16BFAC71E85B1D80045120D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC51E85B1D80045120D /* TransitionViewController.swift */; };
 		F16BFAC91E85B37B0045120D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAC81E85B37B0045120D /* NavigationController.swift */; };
 		F16BFACC1E85BA6A0045120D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFACB1E85BA6A0045120D /* MessagesViewController.swift */; };
 		F16BFACE1E85BA780045120D /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFACD1E85BA780045120D /* MessagesView.swift */; };
@@ -96,8 +94,6 @@
 		E53776F11E84C33100E39B08 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		E5BABD6A1E85BE19002747B8 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		F16BFAC11E85AEEE0045120D /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		F16BFAC41E85B1D80045120D /* TransitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
-		F16BFAC51E85B1D80045120D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		F16BFAC81E85B37B0045120D /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F16BFACB1E85BA6A0045120D /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F16BFACD1E85BA780045120D /* MessagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
@@ -228,7 +224,6 @@
 				E53776CA1E849D4600E39B08 /* Home */,
 				F16BFACA1E85BA5C0045120D /* Messages */,
 				E53776C71E849C8700E39B08 /* Stylesheet */,
-				F16BFAC31E85B1D80045120D /* Transition */,
 				E53776EF1E84C02000E39B08 /* ViewControllerFactory.swift */,
 			);
 			path = UI;
@@ -316,15 +311,6 @@
 				0E9D8E44E9858BD84D8492C9 /* Pods_CSChat.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F16BFAC31E85B1D80045120D /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				F16BFAC51E85B1D80045120D /* TransitionViewController.swift */,
-				F16BFAC41E85B1D80045120D /* TransitionView.swift */,
-			);
-			path = Transition;
 			sourceTree = "<group>";
 		};
 		F16BFACA1E85BA5C0045120D /* Messages */ = {
@@ -565,7 +551,6 @@
 				F16BFAD01E85BBB80045120D /* MessageViewModel.swift in Sources */,
 				F16BFAD21E85BEFF0045120D /* MessageResponse.swift in Sources */,
 				F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */,
-				F16BFAC61E85B1D80045120D /* TransitionView.swift in Sources */,
 				F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */,
 				E53776E01E84AA9000E39B08 /* UIView+MCLayout.swift in Sources */,
 				F18B84561E85A0AF007AA50B /* ConversationSummary.swift in Sources */,
@@ -585,7 +570,6 @@
 				E53776961E848BC200E39B08 /* AppDelegate.swift in Sources */,
 				F18B84381E84D6FC007AA50B /* LoginService.swift in Sources */,
 				F18B84491E859A65007AA50B /* ConversationsController.swift in Sources */,
-				F16BFAC71E85B1D80045120D /* TransitionViewController.swift in Sources */,
 				E53776EC1E84BACF00E39B08 /* LoginView.swift in Sources */,
 				F18B84391E84D6FC007AA50B /* LoginServiceImpl.swift in Sources */,
 				F16BFADB1E86A94E0045120D /* MessageTableViewCell.swift in Sources */,
