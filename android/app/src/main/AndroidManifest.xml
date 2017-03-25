@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mirego.cschat"> <!-- TODO: Changer pour votre prore package -->
+    package="com.mirego.cschat"> <!-- TODO: Changer pour votre propre package -->
 
     <uses-permission android:name="android.permission.INTERNET" />
 
