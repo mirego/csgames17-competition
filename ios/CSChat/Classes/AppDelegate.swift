@@ -43,8 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         _ = loginController?.isLoggedObservable.register(callback: { (_, isLoggedIn) in
             if isLoggedIn && !self.isLoggedIn {
+                self.isLoggedIn = true
                 self.transitionViewController.transitionToViewController(NavigationController(rootViewController: self.viewControllerFactory.conversationsViewController()))
             } else if self.isLoggedIn {
+                self.isLoggedIn = false
                 self.transitionViewController.transitionToViewController(UINavigationController(rootViewController: self.viewControllerFactory.homeViewController()))
             }
         })

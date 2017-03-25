@@ -38,6 +38,7 @@
 		F16BFAD21E85BEFF0045120D /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD11E85BEFE0045120D /* MessageResponse.swift */; };
 		F16BFAD41E85BF270045120D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD31E85BF270045120D /* Conversation.swift */; };
 		F16BFAD61E85C6DE0045120D /* MessageViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */; };
+		F16BFAD91E85DBC30045120D /* SendMessageBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */; };
 		F17FBC671E84CBDC00A0A56E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */; };
 		F17FBC691E84CBFD00A0A56E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC681E84CBFD00A0A56E /* LoginController.swift */; };
 		F17FBC6C1E84CC7000A0A56E /* LoginControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */; };
@@ -97,6 +98,7 @@
 		F16BFAD11E85BEFE0045120D /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		F16BFAD31E85BF270045120D /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		F16BFAD51E85C6DE0045120D /* MessageViewModelImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModelImpl.swift; sourceTree = "<group>"; };
+		F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageBarView.swift; sourceTree = "<group>"; };
 		F17FBC661E84CBDC00A0A56E /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		F17FBC681E84CBFD00A0A56E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17FBC6B1E84CC7000A0A56E /* LoginControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerImpl.swift; sourceTree = "<group>"; };
@@ -312,10 +314,19 @@
 		F16BFACA1E85BA5C0045120D /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				F16BFAD71E85DB500045120D /* Subviews */,
 				F16BFACB1E85BA6A0045120D /* MessagesViewController.swift */,
 				F16BFACD1E85BA780045120D /* MessagesView.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		F16BFAD71E85DB500045120D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F16BFAD81E85DBC30045120D /* SendMessageBarView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		F17FBC651E84CBCA00A0A56E /* Controller */ = {
@@ -546,6 +557,7 @@
 				F18B845D1E85A73F007AA50B /* ConversationsServiceImpl.swift in Sources */,
 				E53776E71E84B4D500E39B08 /* GenericButton.swift in Sources */,
 				F16BFAC21E85AEEE0045120D /* Observable.swift in Sources */,
+				F16BFAD91E85DBC30045120D /* SendMessageBarView.swift in Sources */,
 				E53776DE1E84A3A600E39B08 /* HomeView.swift in Sources */,
 				F16BFAD41E85BF270045120D /* Conversation.swift in Sources */,
 				E53776F21E84C33100E39B08 /* TextField.swift in Sources */,

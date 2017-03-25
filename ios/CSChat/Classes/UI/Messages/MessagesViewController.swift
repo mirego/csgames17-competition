@@ -10,11 +10,11 @@ import UIKit
 
 class MessagesViewController: BaseViewController
 {
-    private var mainView: MessagesView {
+    fileprivate var mainView: MessagesView {
         return self.view as! MessagesView
     }
 
-    private let conversationsController: ConversationsController
+    fileprivate let conversationsController: ConversationsController
     private let conversationViewModel: ConversationViewModel
 
     init(conversationsController: ConversationsController, conversationViewModel: ConversationViewModel)
@@ -35,6 +35,7 @@ class MessagesViewController: BaseViewController
     override func loadView()
     {
         view = MessagesView()
+        mainView.delegate = self
     }
 
     override func viewDidLoad()
@@ -44,15 +45,18 @@ class MessagesViewController: BaseViewController
         conversationsController.allMessages(forConversation: conversationViewModel) { (messages) -> (Void) in
             if let messages = messages {
                 print("messages received: \(messages.count)")
-                messages.forEach {
-                    print("\($0.name ?? "")")
-                    print("\($0.message ?? "")")
-                    print("\($0.date ?? "")")
-                    print("\($0.avatarUrl ?? "")")
-                }
             } else {
                 print("nil messages received!!")
             }
         }
+    }
+}
+
+extension MessagesViewController: MessagesViewDelegate
+{
+    func sendMessage(_ message: String)
+    {
+        mainView.showLoading(true)
+        print("Sending: \(message)")
     }
 }

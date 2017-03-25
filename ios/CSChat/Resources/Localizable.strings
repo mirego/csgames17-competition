@@ -19,3 +19,6 @@
 "LOGIN_PASSWORD_HINT" = "Password";
 
 "CONVERSATIONS_TITLE" = "Conversations";
+
+"MESSAGE_SEND_PLACE_HOLDER" = "Type a message...";
+"MESSAGE_SEND_BUTTON" = "Send";

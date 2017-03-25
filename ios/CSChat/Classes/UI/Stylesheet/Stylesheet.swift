@@ -38,6 +38,11 @@ extension UIColor
     {
         return UIColor(white: 197.0 / 255.0, alpha: 1.0)
     }
+
+    class var white90: UIColor
+    {
+        return UIColor(white: 250.0 / 255.0, alpha: 0.9)
+    }
 }
 
 // MARK: Fonts
