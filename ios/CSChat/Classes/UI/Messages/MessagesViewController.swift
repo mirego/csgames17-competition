@@ -15,7 +15,7 @@ class MessagesViewController: BaseViewController
     }
 
     fileprivate let conversationsController: ConversationsController
-    private let conversationViewModel: ConversationViewModel
+    fileprivate let conversationViewModel: ConversationViewModel
 
     init(conversationsController: ConversationsController, conversationViewModel: ConversationViewModel)
     {
@@ -42,12 +42,17 @@ class MessagesViewController: BaseViewController
     {
         super.viewDidLoad()
 
-        conversationsController.allMessages(forConversation: conversationViewModel) { (messages) -> (Void) in
-            if let messages = messages {
-                print("messages received: \(messages.count)")
-            } else {
-                print("nil messages received!!")
-            }
+        conversationsController.allMessages(forConversation: conversationViewModel) { [weak self] (messages) -> (Void) in
+            self?.processMessage(messages)
+        }
+    }
+
+    fileprivate func processMessage(_ messages: [MessageViewModel]?)
+    {
+        if let messages = messages {
+            print("messages received: \(messages.count)")
+        } else {
+            print("nil messages received!!")
         }
     }
 }
@@ -57,6 +62,12 @@ extension MessagesViewController: MessagesViewDelegate
     func sendMessage(_ message: String)
     {
         mainView.showLoading(true)
-        print("Sending: \(message)")
+        conversationsController.sendMessage(message: message, conversationViewModel: conversationViewModel) { [weak self] (messages) -> (Void) in
+            self?.mainView.showLoading(false)
+            if messages != nil {
+                self?.mainView.cleanMessage()
+            }
+            self?.processMessage(messages)
+        }
     }
 }

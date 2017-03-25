@@ -63,4 +63,26 @@ class ConversationsControllerImpl: ConversationsController
             }
         }
     }
+
+    func sendMessage(message: String, conversationViewModel: ConversationViewModel, completion: @escaping (_ messages: [MessageViewModel]?) -> (Void))
+    {
+        guard let loggedUser = loginService.loggedUser, let conversationImpl = conversationViewModel as? ConversationViewModelImpl else {
+            completion(nil)
+            return
+        }
+
+        conversationsService.sendMessage(message: message, conversationSummary: conversationImpl.conversationSummary, loggedUser: loggedUser) { (messageResponse) -> (Void) in
+            if let messageResponse = messageResponse, let conversation = messageResponse.conversations?.first, let users = messageResponse.users {
+                var messageViewDatas: [MessageViewModel] = []
+                if let messages = conversation.messages {
+                    messages.forEach {
+                        messageViewDatas.append(MessageViewModelImpl(message: $0, users: users))
+                    }
+                }
+                completion(messageViewDatas)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }

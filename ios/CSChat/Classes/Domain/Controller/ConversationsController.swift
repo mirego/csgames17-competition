@@ -13,4 +13,6 @@ protocol ConversationsController
     func allConversations(completion: @escaping (_ conversations: [ConversationViewModel]?) -> (Void))
 
     func allMessages(forConversation conversation: ConversationViewModel, completion: @escaping (_ messages: [MessageViewModel]?) -> (Void))
+
+    func sendMessage(message: String, conversationViewModel: ConversationViewModel, completion: @escaping (_ messages: [MessageViewModel]?) -> (Void))
 }

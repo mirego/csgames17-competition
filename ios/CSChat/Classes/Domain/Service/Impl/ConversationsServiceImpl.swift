@@ -44,4 +44,21 @@ class ConversationsServiceImpl: ConversationsService
             }
         }
     }
+
+    func sendMessage(message: String, conversationSummary: ConversationSummary, loggedUser: User, completion: @escaping (_ messageResponse: MessageResponse?) -> (Void))
+    {
+        let url = HttpConst.baseUrl + "users/\(loggedUser.id ?? "")/conversations/\(conversationSummary.id ?? "")"
+        let parameters: [String: Any] = ["message": message]
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseObject { (response: DataResponse<MessageResponse>) in
+            if let statusCode = response.response?.statusCode {
+                if (statusCode >= 200 && statusCode < 300) {
+                    completion(response.result.value)
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }
