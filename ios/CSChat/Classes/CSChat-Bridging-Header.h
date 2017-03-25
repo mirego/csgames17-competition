@@ -4,6 +4,3 @@
 
 #import <MCUIViewLayout/UIView+MCLayout.h>
 #import <MCUIColorUtils/UIColor+MCUIColorsUtils.h>
-
-#import <SVProgressHUD/SVProgressHUD.h>
-

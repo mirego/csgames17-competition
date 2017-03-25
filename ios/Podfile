@@ -7,7 +7,6 @@ target 'CSChat' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'Kingfisher'
-  pod 'SVProgressHUD'
   pod 'GestureRecognizerClosures'
   pod 'BRYParseKeyboardNotification'
 

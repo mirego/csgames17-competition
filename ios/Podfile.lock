@@ -10,7 +10,6 @@ PODS:
   - MCUIViewLayout (0.5.1)
   - MRGTaylor (1.0)
   - ObjectMapper (2.2.4)
-  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -21,7 +20,6 @@ DEPENDENCIES:
   - MCUIColorUtils (from `https://github.com/mirego/MCUIColorUtils.git`)
   - MCUIViewLayout (from `https://github.com/mirego/MCUIViewLayout.git`)
   - MRGTaylor (from `https://github.com/mirego/taylor-ios.git`)
-  - SVProgressHUD
 
 EXTERNAL SOURCES:
   MCUIColorUtils:
@@ -52,8 +50,7 @@ SPEC CHECKSUMS:
   MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
   MRGTaylor: 5b841794b1ea32b3dfec3d9e1bc971c4fe6f73a1
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: dd20c22b87bfb603a6ac6a13200597532fcf2944
+PODFILE CHECKSUM: e386e29e455d49a2cdfa742ad0c2fd2f39ea3ac9
 
 COCOAPODS: 1.2.0

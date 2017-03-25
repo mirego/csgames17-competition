@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -32,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         loginController = controllerFactory.loginController()
 
         transitionViewController = TransitionViewController(viewController: UINavigationController(rootViewController: viewControllerFactory.homeViewController()))
-
-        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.tintColor = .white
