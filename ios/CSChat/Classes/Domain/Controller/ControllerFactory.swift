@@ -11,10 +11,12 @@ import UIKit
 class ControllerFactory
 {
     private let serviceFactory: ServiceFactory
+    private let dateFormatter: MessageDateFormatter
 
     init(serviceFactory: ServiceFactory)
     {
         self.serviceFactory = serviceFactory
+        self.dateFormatter = MessageDateFormatterImpl()
     }
 
     func loginController() -> LoginController
@@ -24,6 +26,6 @@ class ControllerFactory
 
     func conversationsController() -> ConversationsController
     {
-        return ConversationsControllerImpl(loginService: serviceFactory.loginService(), conversationsService: serviceFactory.conversationsService())
+        return ConversationsControllerImpl(loginService: serviceFactory.loginService(), conversationsService: serviceFactory.conversationsService(), dateFormatter: dateFormatter)
     }
 }

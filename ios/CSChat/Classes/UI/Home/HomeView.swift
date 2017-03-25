@@ -67,8 +67,8 @@ class HomeView: UIView
         subtitleLabel.setRelativePosition(.relativePositionUnderCentered, toView: titleLabel, margins: .top(2))
 
         let buttonSize = CGSize(width: width - 2 * Stylesheet.margin, height: Stylesheet.controlHeight)
-        registerButton.setPosition(.positionBottomHCenter, margins: .bottom(Stylesheet.margin), size: buttonSize)
+        registerButton.setPosition(.positionBottomHCenter, margins: .bottom(Stylesheet.margin + 2), size: buttonSize)
 
-        loginButton.setRelativePosition(.relativePositionAboveCentered, toView: registerButton, margins: .bottom(Stylesheet.margin), size: buttonSize)
+        loginButton.setRelativePosition(.relativePositionAboveCentered, toView: registerButton, margins: .bottom(Stylesheet.spacing), size: buttonSize)
     }
 }

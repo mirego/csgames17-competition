@@ -19,7 +19,7 @@ class ConversationViewModelImpl: ConversationViewModel
     }
 
     var date: String? {
-        return conversationSummary.lastMessage?.timestamp
+        return dateFormatter.shortFormat(dateString: conversationSummary.lastMessage?.timestamp)
     }
 
     var avatarUrl: String? {
@@ -27,11 +27,14 @@ class ConversationViewModelImpl: ConversationViewModel
     }
 
     let conversationSummary: ConversationSummary
+    let dateFormatter: MessageDateFormatter
+
     private let user: User?
 
-    init(conversationSummary: ConversationSummary, users: [User], loggedUser: User)
+    init(conversationSummary: ConversationSummary, users: [User], loggedUser: User, dateFormatter: MessageDateFormatter)
     {
         self.conversationSummary = conversationSummary
+        self.dateFormatter = dateFormatter
 
         if let userIds = conversationSummary.userIds, let notLoggedUserId = (userIds.filter { $0 != loggedUser.id }).first {
             if let user = (users.filter { $0.id == notLoggedUserId }).first {

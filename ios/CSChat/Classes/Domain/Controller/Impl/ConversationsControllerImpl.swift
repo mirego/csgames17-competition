@@ -12,11 +12,13 @@ class ConversationsControllerImpl: ConversationsController
 {
     private let loginService: LoginService
     private let conversationsService: ConversationsService
+    private let dateFormatter: MessageDateFormatter
 
-    init(loginService: LoginService, conversationsService: ConversationsService)
+    init(loginService: LoginService, conversationsService: ConversationsService, dateFormatter: MessageDateFormatter)
     {
         self.loginService = loginService
         self.conversationsService = conversationsService
+        self.dateFormatter = dateFormatter
     }
 
     func allConversations(completion: @escaping (_ conversations: [ConversationViewModel]?) -> (Void))
@@ -35,7 +37,7 @@ class ConversationsControllerImpl: ConversationsController
             var conversationsViewModel: [ConversationViewModel] = []
             if let conversations = conversationResponse.conversations {
                 conversations.forEach{
-                    conversationsViewModel.append(ConversationViewModelImpl(conversationSummary: $0, users: users, loggedUser: loggedUser))
+                    conversationsViewModel.append(ConversationViewModelImpl(conversationSummary: $0, users: users, loggedUser: loggedUser, dateFormatter: self.dateFormatter))
                 }
             }
             completion(conversationsViewModel)

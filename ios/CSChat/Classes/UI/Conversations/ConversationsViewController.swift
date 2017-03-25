@@ -39,6 +39,7 @@ class ConversationsViewController: BaseViewController
     override func loadView()
     {
         view = ConversationsView()
+        mainView.delegate = self
     }
 
     override func viewDidLoad()
@@ -46,21 +47,7 @@ class ConversationsViewController: BaseViewController
         super.viewDidLoad()
 
         conversationsController.allConversations { (conversations) -> (Void) in
-            if let conversations = conversations {
-                print("Conversation received: \(conversations.count)")
-                conversations.forEach {
-                    print("\($0.name ?? "")")
-                    print("\($0.message ?? "")")
-                    print("\($0.date ?? "")")
-                    print("\($0.avatarUrl ?? "")")
-                }
-
-                delay(2, closure: { 
-                    self.navigationController?.pushViewController(self.viewControllerFactory.messagesViewController(conversationViewModel: conversations[0]), animated: true)
-                })
-            } else {
-                print("Error!!")
-            }
+            self.mainView.configure(conversations: conversations ?? [])
         }
     }
 
@@ -68,5 +55,13 @@ class ConversationsViewController: BaseViewController
     {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.layer.removeAllAnimations()
+    }
+}
+
+extension ConversationsViewController: ConversationsViewDelegate
+{
+    func didTapConversation(conversation: ConversationViewModel)
+    {
+        self.navigationController?.pushViewController(self.viewControllerFactory.messagesViewController(conversationViewModel: conversation), animated: true)
     }
 }

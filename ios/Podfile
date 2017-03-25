@@ -6,6 +6,7 @@ target 'CSChat' do
   # 3rd party
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
+  pod 'Kingfisher'
   pod 'SVProgressHUD'
   pod 'GestureRecognizerClosures'
   pod 'BRYParseKeyboardNotification'

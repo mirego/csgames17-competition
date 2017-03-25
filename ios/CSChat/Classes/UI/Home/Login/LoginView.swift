@@ -90,11 +90,11 @@ class LoginView: UIView
 
         username.setRelativePosition(.relativePositionUnderCentered, toView: loginLabel, margins: .top(20), size: controlSize)
 
-        password.setRelativePosition(.relativePositionUnderCentered, toView: username, margins: .top(5), size: controlSize)
+        password.setRelativePosition(.relativePositionUnderCentered, toView: username, margins: .top(6), size: controlSize)
 
-        backButton.setPosition(.positionBottomHCenter, margins: .bottom(keyboardHeight + 5), size: controlSize)
+        backButton.setPosition(.positionBottomHCenter, margins: .bottom(max(keyboardHeight + 8, Stylesheet.margin)), size: controlSize)
 
-        continueButton.setRelativePosition(.relativePositionAboveCentered, toView: backButton, margins: .bottom(Stylesheet.margin - 5), size: controlSize)
+        continueButton.setRelativePosition(.relativePositionAboveCentered, toView: backButton, margins: .bottom(Stylesheet.spacing - 5), size: controlSize)
     }
 
     func focusUsername()

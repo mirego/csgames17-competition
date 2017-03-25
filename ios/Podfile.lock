@@ -5,6 +5,7 @@ PODS:
     - ObjectMapper (~> 2.0)
   - BRYParseKeyboardNotification (1.0.1)
   - GestureRecognizerClosures (3.0.0)
+  - Kingfisher (3.5.2)
   - MCUIColorUtils (1.0.1)
   - MCUIViewLayout (0.5.1)
   - MRGTaylor (1.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - BRYParseKeyboardNotification
   - GestureRecognizerClosures
+  - Kingfisher
   - MCUIColorUtils (from `https://github.com/mirego/MCUIColorUtils.git`)
   - MCUIViewLayout (from `https://github.com/mirego/MCUIViewLayout.git`)
   - MRGTaylor (from `https://github.com/mirego/taylor-ios.git`)
@@ -45,12 +47,13 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   BRYParseKeyboardNotification: c0d369594604bf7a77994a2f1133a785af104412
   GestureRecognizerClosures: a57e37768b1b28d534c13f5126916eb917519601
+  Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   MCUIColorUtils: d99a916bf2eacff39009e2a291fdea5d0de423a4
   MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
   MRGTaylor: 5b841794b1ea32b3dfec3d9e1bc971c4fe6f73a1
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 2e2c00d8d3eab1d18fe6dba3e0c6697a5e94407a
+PODFILE CHECKSUM: dd20c22b87bfb603a6ac6a13200597532fcf2944
 
 COCOAPODS: 1.2.0

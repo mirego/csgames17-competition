@@ -9,9 +9,11 @@
 // MARK: Values
 class Stylesheet
 {
-    // PMARK: Durations
+    // MARK: Durations
     static let minimumLoadingDuration: TimeInterval = 0.5
 
+    // MARK: Dimensions
+    static let spacing = 12.f
     static let margin = 16.f
     static let controlHeight = 53.f
 }
