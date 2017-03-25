@@ -15,4 +15,5 @@
     <string name="network_error">Ooops, something went wrong</string>
     <string name="send">Send</string>
     <string name="send_message_hint">Type a message...</string>
+    <string name="login_loading">Logging in...</string>
 </resources>
