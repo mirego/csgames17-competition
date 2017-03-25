@@ -1,15 +1,16 @@
 package com.mirego.cschat.viewdatas;
 
+import android.text.format.DateUtils;
+
 import com.mirego.cschat.models.Message;
 import com.mirego.cschat.models.User;
 
-import java.text.DateFormat;
+import java.util.Date;
 
 public class MessageViewData {
 
     private final Message message;
     private final User user;
-    private final DateFormat dateFormat = DateFormat.getTimeInstance();
 
     public MessageViewData(Message message, User user) {
         this.message = message;
@@ -21,7 +22,8 @@ public class MessageViewData {
     }
 
     public String timestamp() {
-        return dateFormat.format(message.getTimestamp());
+        Date timestamp = message.getTimestamp();
+        return DateUtils.getRelativeTimeSpanString(timestamp.getTime(), new Date().getTime(), DateUtils.FORMAT_ABBREV_ALL).toString();
     }
 
     public String avatarUrl() {
