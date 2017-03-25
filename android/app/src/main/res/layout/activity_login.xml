@@ -38,6 +38,7 @@
             style="@style/LoginField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/dustyOrange"
             android:inputType="textNoSuggestions" />
 
     </android.support.design.widget.TextInputLayout>
@@ -56,6 +57,7 @@
             style="@style/LoginField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/dustyOrange"
             android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
