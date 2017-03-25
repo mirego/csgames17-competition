@@ -62,7 +62,7 @@ class MessagesView: UIView
 
         sendMessageBarView.setPosition(.positionBottomLeft, margins: .bottom(keyboardHeight), size: CGSize(width: width, height: sendMessageBarView.height))
 
-        tableView.setPosition(.positionTopLeft, margins: .top(0), size: CGSize(width: width, height: height - sendMessageBarView.height))
+        tableView.setPosition(.positionTopLeft, margins: .top(0), size: CGSize(width: width, height: height - keyboardHeight - sendMessageBarView.height))
     }
 
     fileprivate func sendMessage()
@@ -76,6 +76,12 @@ class MessagesView: UIView
     {
         self.messages = messages
         tableView.reloadData()
+        scrollToBottom()
+    }
+
+    func scrollToBottom()
+    {
+        tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentInset.bottom + max(-tableView.contentInset.top, tableView.contentSize.height - tableView.height)), animated: false)
     }
 
     func showLoading(_ loading: Bool)
@@ -106,9 +112,12 @@ extension MessagesView
     {
         BRYParseKeyboardNotification(notification) { [weak self] (duration, keyboardHeight, options) -> Void in
             self?.keyboardHeight = keyboardHeight
-            self?.tableView.contentInset = .margins(top: Stylesheet.spacing / 2, bottom: keyboardHeight)
+
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self?.layoutSubviews()
+                self?.setNeedsLayout()
+                self?.layoutIfNeeded()
+
+                self?.scrollToBottom()
             }, completion: nil)
         }
     }
@@ -117,9 +126,12 @@ extension MessagesView
     {
         BRYParseKeyboardNotification(notification) { [weak self] (duration, _, options) -> Void in
             self?.keyboardHeight = 0
-            self?.tableView.contentInset = .top(Stylesheet.spacing / 2)
+
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self?.layoutSubviews()
+                self?.setNeedsLayout()
+                self?.layoutIfNeeded()
+
+                self?.scrollToBottom()
             }, completion: nil)
         }
     }
@@ -130,11 +142,6 @@ extension MessagesView: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return cellForHeight.height(forMessage: messages[indexPath.row], inWidth: width)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
-    {
-        print("\(scrollView.contentOffset.y)")
     }
 }
 
