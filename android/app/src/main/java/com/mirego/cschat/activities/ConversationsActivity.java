@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
@@ -115,7 +116,7 @@ public class ConversationsActivity extends BaseActivity implements ConversationA
 
     @OnClick(R.id.fab_add_conversation)
     public void onAddConversationClicked() {
-        // TODO:
+        Toast.makeText(this, getString(R.string.not_implemented_yet), Toast.LENGTH_LONG).show();
     }
 
     @Override

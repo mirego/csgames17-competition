@@ -13,7 +13,10 @@ exports.list = function (req, res) {
           'lastMessage': _.last(conversation.messages),
           'users': conversation.users
         })
-    );
+    ).sort(function (conv1, conv2) {
+      return Date.parse(conv2.lastMessage.timestamp) - Date.parse(conv1.lastMessage.timestamp);
+    });
+
     returnConversationsBetweenUsers(req, res, conversations);
   });
 };

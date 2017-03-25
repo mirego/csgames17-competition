@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.Prefs;
@@ -39,7 +40,7 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.btn_register)
     public void onRegisterClicked() {
-        //FIXME:
+        Toast.makeText(this, getString(R.string.not_implemented_yet), Toast.LENGTH_LONG).show();
     }
 
 }
