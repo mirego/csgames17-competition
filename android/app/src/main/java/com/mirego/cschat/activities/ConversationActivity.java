@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.mirego.cschat.CSChatApplication;
 import com.mirego.cschat.R;
@@ -193,7 +194,7 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
 
     @Override
     public void onMessageClicked(MessageViewData messageViewData) {
-        // todo
+        Toast.makeText(this, getString(R.string.not_implemented_yet), Toast.LENGTH_LONG).show();
     }
 
     private void scrollToBottom(){
