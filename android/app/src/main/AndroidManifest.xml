@@ -34,7 +34,7 @@
         <activity
             android:name="com.mirego.cschat.activities.ConversationActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
     </application>
 
 </manifest>
