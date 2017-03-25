@@ -13,7 +13,7 @@ Make sure you have the following software installed before beginning:
 
 You can download these from the [Apple Developer website](https://developer.apple.com/downloads/).
 
-> **NOTE:** You need a Mac computer running macOS 10.11.5 or later. If you don't have one, you may check our [Sample Android app](https://github.com/mirego/csgames-sample-android/), which can be run on Windows, Linux and older versions of macOS.
+> **NOTE:** You need a Mac computer running macOS 10.11.5 or later. If you don't have one, go to our [Android app](https://github.com/mirego/csgames17-competition/tree/master/android), which can be run on Windows, Linux and older versions of macOS.
 
 ## Getting started
 
@@ -51,7 +51,7 @@ open CSChat.xcworkspace
 
 In Xcode, run the project by simply pressing the "Play" button on the top left, or by hitting `⌘R`.
 
-<p align="center"><img width="397" src="https://cloud.githubusercontent.com/assets/4378424/13624346/1c8ac8c0-e57b-11e5-9a4d-af6d4a104255.png"></p>
+<p align="center"><img width="397" src="https://cloud.githubusercontent.com/assets/4378424/24324682/3c682b70-1161-11e7-9d87-373095c82ed7.jpg"></p>
 
 Once the app opens up in the iOS Simulator, you are ready to start coding.
 
@@ -62,54 +62,6 @@ Once the app opens up in the iOS Simulator, you are ready to start coding.
 It should be fairly straightforward to use and customize, but if you want to know more about it, you can read on.
 
 > **NOTE:** Before you begin, make sure the web server is up and running (see the [server page](https://github.com/mirego/csgames17-competition/tree/master/server)).
-
-### Views
-
-The app contains two main view controllers:
-
-- `MainViewController`: The **home screen**, with *login* and *registration*
-- `MessagesViewController`: The **messaging screen**, with random text strings and a fixed image
-
-You will customize mostly the latter, where you can add real messaging functionalities. You are free to change the project structure and add as many views as you want, but keep in mind that 3 hours go very fast.
-
-### Libraries
-
-As you will see from the `Podfile`, this project uses a couple of libraries:
-
-#### Public libraries
-- **[Alamofire](https://github.com/Alamofire/Alamofire)**: Simple HTTP networking, to easily send requests to the web server
-- **[SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)**: Simple HUD controller, to display loading indicators and operation results
-- **[SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)**: Simple JSON-handler, to easily handle server responses
-
-#### Mirego libraries
-- **[MCUIColorUtils](https://github.com/mirego/MCUIColorUtils)**: Extension to UIColor, adding convenient methods for color management
-- **[MCUIViewLayout](https://github.com/mirego/MCUIViewLayout)**: Extension to UIView, making manual view layouting easier
-- **[MRGArchitect](https://github.com/mirego/MRGArchitect)**: Device-agnostic tool to load different values depending on the current screen size
-
-These make up the project as it is, but you may add or remove pod dependencies as much as you like.
-
-### Data Sources
-
-The app contains two data sources:
-
-- `UserApi`: For user login and registration
-- `MessageApi`: For messages sent through the app
-
-They offer very basic support for two routes available in the [server](https://github.com/mirego/csgames17-competition/tree/master/server). The data is not validated, except for the user login, where only existing users are authorized.
-
-### Next steps
-
-So, what's the room for improvement?
-
-Here are some features you could add to this app:
-
-- Rich text messages
-- Real-time socketed messaging
-- Group conversations
-- Conversation messages paging
-- Push notifications
-
-The list is non-exhaustive, feel free to do anything you can think of!
 
 ## License
 
