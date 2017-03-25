@@ -6,7 +6,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.mirego.sampleapp"
+        applicationId "com.mirego.cschat" //TODO: Changer pour votre propre package
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
