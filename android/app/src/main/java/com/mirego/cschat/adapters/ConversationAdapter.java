@@ -59,7 +59,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
                 }
                 holder.tvLastMessage.setText(messageViewData.message());
                 holder.tvTimestamp.setText(messageViewData.timestamp());
-                Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
+                Glide.with(context).load(messageViewData.avatarUrl()).placeholder(R.drawable.img_profile).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
             }
         }
     }

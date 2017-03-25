@@ -52,7 +52,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.tvTitle.setText(messageViewData.username());
             holder.tvMessage.setText(messageViewData.message());
             holder.tvTimestamp.setText(messageViewData.timestamp());
-            Glide.with(context).load(messageViewData.avatarUrl()).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
+            Glide.with(context).load(messageViewData.avatarUrl()).placeholder(R.drawable.img_profile).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivAvatar);
         }
     }
 
