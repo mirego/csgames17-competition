@@ -13,8 +13,6 @@ class MessageDateFormatterImpl: MessageDateFormatter
     private let dateParser: DateFormatter
     private let dateFormatter: DateFormatter
 
-    private let lastWeekTimeInterval: TimeInterval = -60 * 60 * 24 * 6
-
     init()
     {
         dateParser = DateFormatter()

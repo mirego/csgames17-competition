@@ -34,7 +34,7 @@ class MessageTableViewCell: UITableViewCell
         usernameLabel.setProperties(font: .latoBold(18), textColor: .black, textAlignment: .left)
         addSubview(usernameLabel)
 
-        lastMessageLabel.setProperties(font: .latoRegular(15), textColor: .purpleyGrey, textAlignment: .left, multiline: true)
+        lastMessageLabel.setProperties(font: .latoRegular(15), textColor: .black, textAlignment: .left, multiline: true)
         addSubview(lastMessageLabel)
 
         dateLabel.setProperties(font: .latoRegular(14), textColor: .purpleyGrey, textAlignment: .right)
@@ -78,7 +78,7 @@ class MessageTableViewCell: UITableViewCell
 
         usernameLabel.setProperties(text: message.name, fit: true)
         lastMessageLabel.setProperties(text: message.message)
-        dateLabel.setProperties(text: message.date, fit: true)
+        dateLabel.setProperties(text: message.date?.lowercased(), fit: true)
 
         setNeedsLayout()
     }

@@ -42,19 +42,15 @@ class ConversationsViewController: BaseViewController
         mainView.delegate = self
     }
 
-    override func viewDidLoad()
+    override func viewWillAppear(_ animated: Bool)
     {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.layer.removeAllAnimations()
 
         conversationsController.allConversations { (conversations) -> (Void) in
             self.mainView.configure(conversations: conversations ?? [])
         }
-    }
-
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.layer.removeAllAnimations()
     }
 }
 
