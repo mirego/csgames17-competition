@@ -30,6 +30,9 @@ class ConversationTableViewCell: UITableViewCell
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = UIColor.purpleyGrey.withAlphaComponent(0.25)
+
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = profileImageWidth / 2
         profileImageView.mc_setSize(CGSize(width: profileImageWidth, height: profileImageWidth))
