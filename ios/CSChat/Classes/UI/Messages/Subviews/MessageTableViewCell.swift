@@ -78,7 +78,7 @@ class MessageTableViewCell: UITableViewCell
 
         usernameLabel.setProperties(text: message.name, fit: true)
         lastMessageLabel.setProperties(text: message.message)
-        dateLabel.setProperties(text: message.date?.lowercased(), fit: true)
+        dateLabel.setProperties(text: message.date, fit: true)
 
         setNeedsLayout()
     }
