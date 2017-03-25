@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 exports.list = function (req, res) {
   let filter = {};
   let projection = {
@@ -28,7 +30,7 @@ exports.register = function (req, res) {
   if (req.body.username && req.body.password) {
     let user = {
       'username': req.body.username,
-      'password': req.body.password,
+      'password': bcrypt.hashSync(req.body.password, 8),
       'url': req.body.url || ''
     };
     req.db.users.insert(user, function (e, user) {

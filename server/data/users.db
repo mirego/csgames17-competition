@@ -1,4 +1,5 @@
-{"username":"horace","password":"draught146","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/louisck.jpg","_id":"L0Fjxv4qrNCcPkZC"}
-{"username":"pete","password":"jameson270","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/stevebuscemi.jpg","_id":"PHT3RCJOjHVVBZuE"}
-{"username":"unclepete","password":"booze61263","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/unclepete.jpg","_id":"PULAnPUUH06LcCzH"}
-{"username":"monsieur","password":"CSGames17!","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/monsieur.jpg","_id":"ZxPI0nf1mAAp4FSM"}
+{"username":"horace","password":"$2a$10$DDRamQGb8POYFfjJkiEIQewBW3hEevvgxITksOQRvpE7jvoWqBSDW","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/louisck.jpg","_id":"L0Fjxv4qrNCcPkZC"}
+{"username":"pete","password":"$2a$10$BCswEMTMTHqbxcS6Jt67lO52a16Hi5zJQT5ra2L6tHM8BOcwdh7L2","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/stevebuscemi.jpg","_id":"PHT3RCJOjHVVBZuE"}
+{"username":"unclepete","password":"$2a$10$J1.4fjIx1BmiaxbQQKq26u5fBI7X.yREqayRLh6kwgMD4qsMkn2Cq","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/unclepete.jpg","_id":"PULAnPUUH06LcCzH"}
+{"username":"monsieur","password":"$2a$10$xvu4lGDX2kNBtTd63qoMFOgl6MEAJGBG6F0/FFhhhDCcob1oBs7kW","url":"http://s3.amazonaws.com/shared.qa.mirego.com/csgames2017/monsieur.jpg","_id":"ZxPI0nf1mAAp4FSM"}
+{"username":"brocolivier","password":"$2a$08$zH.2wzFrMmuF33exmhNHIO7mDHL5CqLsmG5PRo1AV8eHCVx8/dvu6","url":"","_id":"fiesYGQBg3wN3RwY"}
