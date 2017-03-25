@@ -31,8 +31,8 @@ You will also find a digital version of the challenge description:
   </thead>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/mirego/csgames17-competition/raw/master/MobileCompetition-EN.pdf" target="_blank"><img src="https://cloud.githubusercontent.com/assets/4378424/13652341/a162a966-e619-11e5-8c66-e972657456b3.jpg" height="192"></a></td>
-      <td align="center"><a href="https://github.com/mirego/csgames17-competition/raw/master/MobileCompetition-FR.pdf" target="_blank"><img src="https://cloud.githubusercontent.com/assets/4378424/13652342/a16b2262-e619-11e5-8ef4-09af585228eb.jpg" height="192"></a></td>
+      <td align="center"><a href="https://github.com/mirego/csgames17-competition/raw/master/MobileCompetition-EN.pdf" target="_blank"><img src="https://cloud.githubusercontent.com/assets/4378424/24324580/49f302f8-115f-11e7-89e4-52e985493993.jpg" height="192"></a></td>
+      <td align="center"><a href="https://github.com/mirego/csgames17-competition/raw/master/MobileCompetition-FR.pdf" target="_blank"><img src="https://cloud.githubusercontent.com/assets/4378424/24324581/49f41e72-115f-11e7-89e2-045b3daf2133.jpg" height="192"></a></td>
     </tr>
   </tbody>
 </table>
@@ -41,9 +41,9 @@ Every aspect of the competition should be covered in either the repository instr
 
 ## License
 
-This competition is © 2016 [Mirego](http://www.mirego.com) and may be freely
+This competition is © 2017 [Mirego](http://www.mirego.com) and may be freely
 distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
-See the [`LICENSE.md`](https://github.com/mirego/csgames16-competition/blob/master/LICENSE.md) file.
+See the [`LICENSE.md`](https://github.com/mirego/csgames17-competition/blob/master/LICENSE.md) file.
 
 ## About Mirego
 

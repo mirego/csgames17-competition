@@ -1,4 +1,4 @@
-# CS Games 2016 - Mobile - Solution
+# CS Games 2017 - Mobile - Solution
 
 ## Team details
 
