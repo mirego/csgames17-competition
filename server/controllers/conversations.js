@@ -113,8 +113,8 @@ const returnConversationsBetweenUsers = function (req, res, conversations) {
       'users': users
     });
   });
+};
 
-  function currentUserCreatesAConversationWithSomeoneElse(userIds, req) {
-    return userIds && userIds.length === 2 && userIds.includes(req.params.user_id);
-  }
+const currentUserCreatesAConversationWithSomeoneElse = function (userIds, req) {
+  return userIds && userIds.length === 2 && userIds.includes(req.params.user_id);
 };
