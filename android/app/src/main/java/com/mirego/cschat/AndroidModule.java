@@ -28,7 +28,7 @@ class AndroidModule {
     Retrofit provideRetrofit() {
         return new Retrofit.Builder()
                 // TODO: Changer pour votre propre serveur
-                .baseUrl("http://192.168.0.101:3000")
+                .baseUrl("http://10.240.193.56:3000")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
@@ -53,12 +53,12 @@ class AndroidModule {
 
     @Provides
     ConversationsController provideConversationsController(CSChatService chatService, StorageService storageService) {
-        return new ConversationsController(chatService, storageService);
+        return new ConversationsController(chatService, storageService, application);
     }
 
     @Provides
     ConversationController proviceConversationController(CSChatService chatService, StorageService storageService) {
-        return new ConversationController(chatService, storageService);
+        return new ConversationController(chatService, storageService, application);
     }
 
 }

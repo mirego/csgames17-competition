@@ -1,5 +1,7 @@
 package com.mirego.cschat.controller;
 
+import android.content.Context;
+
 import com.mirego.cschat.models.Conversation;
 import com.mirego.cschat.models.request.CreateConversationRequest;
 import com.mirego.cschat.models.request.CreateMessageRequest;
@@ -20,10 +22,12 @@ public class ConversationController {
 
     private final CSChatService chatService;
     private final StorageService storageService;
+    private Context context;
 
-    public ConversationController(CSChatService chatService, StorageService storageService) {
+    public ConversationController(CSChatService chatService, StorageService storageService, Context context) {
         this.chatService = chatService;
         this.storageService = storageService;
+        this.context = context;
     }
 
     public Flowable<ConversationViewData> getConversation(String conversationId) {
@@ -31,7 +35,7 @@ public class ConversationController {
                 .map(new Function<ConversationsResponse, ConversationViewData>() {
                     @Override
                     public ConversationViewData apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
-                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId());
+                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId(), context);
                     }
                 });
     }
@@ -44,7 +48,7 @@ public class ConversationController {
                     public List<ConversationViewData> apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
                         List<ConversationViewData> conversationViewDatum = new ArrayList<>();
                         for (Conversation conversation : conversationsResponse.getConversations()) {
-                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponse.getUsers(), storageService.currentUserId()));
+                            conversationViewDatum.add(new ConversationViewData(conversation, conversationsResponse.getUsers(), storageService.currentUserId(), context));
                         }
                         return conversationViewDatum;
                     }
@@ -56,7 +60,7 @@ public class ConversationController {
                 .map(new Function<ConversationsResponse, ConversationViewData>() {
                     @Override
                     public ConversationViewData apply(@NonNull ConversationsResponse conversationsResponse) throws Exception {
-                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId());
+                        return new ConversationViewData(conversationsResponse.getConversations().get(0), conversationsResponse.getUsers(), storageService.currentUserId(), context);
                     }
                 });
     }

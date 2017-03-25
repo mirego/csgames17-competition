@@ -1,5 +1,7 @@
 package com.mirego.cschat.viewdatas;
 
+import android.content.Context;
+
 import com.mirego.cschat.models.Conversation;
 import com.mirego.cschat.models.Message;
 import com.mirego.cschat.models.User;
@@ -12,21 +14,23 @@ public class ConversationViewData {
     private final Conversation conversation;
     private final List<User> users;
     private final String currentUserId;
+    private Context context;
 
-    public ConversationViewData(Conversation conversation, List<User> users, String currentUserId) {
+    public ConversationViewData(Conversation conversation, List<User> users, String currentUserId, Context context) {
         this.conversation = conversation;
         this.users = users;
+        this.context = context;
         this.currentUserId = currentUserId;
     }
 
     public MessageViewData lastMessage() {
-        return new MessageViewData(conversation.getLastMessage(), otherUserFromIds(conversation.getUsers()));
+        return new MessageViewData(conversation.getLastMessage(), otherUserFromIds(conversation.getUsers()), context);
     }
 
     public List<MessageViewData> messages() {
         List<MessageViewData> messageViewDatas = new ArrayList<>();
         for (Message message : conversation.getMessages()) {
-            messageViewDatas.add(new MessageViewData(message, userForUserId(message.getUserId())));
+            messageViewDatas.add(new MessageViewData(message, userForUserId(message.getUserId()), context));
         }
         return messageViewDatas;
     }
