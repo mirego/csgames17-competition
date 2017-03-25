@@ -50,10 +50,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:imeOptions="actionSend"
             android:layout_weight="1"
             android:backgroundTint="@color/dustyOrange"
             android:hint="@string/send_message_hint"
             android:paddingRight="8dp"
+            android:inputType="text"
             android:textColor="@color/purpleyGrey"
             android:textColorHint="@color/purpleyGrey" />
 

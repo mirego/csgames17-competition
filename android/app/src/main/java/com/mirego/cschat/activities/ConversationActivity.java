@@ -9,12 +9,15 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mirego.cschat.CSChatApplication;
@@ -78,6 +81,20 @@ public class ConversationActivity extends BaseActivity implements MessageAdapter
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         configureMessagesRecyclerView();
+        configureMessageInput();
+    }
+
+    private void configureMessageInput(){
+        edtMessageInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    onSendMessageClicked();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     private void configureMessagesRecyclerView() {
